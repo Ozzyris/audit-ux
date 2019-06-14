@@ -1,0 +1,18 @@
+<section class="questionnaire">
+	<div class="question" *ngFor="let question of history;">
+		<p class="title">{{question.title}}</p>
+		<p class="subtitle">{{question.subtitle}}</p>
+		<div class="form">
+			<div class="button_container" *ngFor="let answers of question.possibleanswers;">
+				<a class="button" (click)="question.answers = answers.title" [ngClass]="{'active': question.answers == answers.title}" >{{answers.title}}</a>
+			</div>
+		</div>
+		<div class="recommendation" *ngIf="question.answers == 'no'">
+			<label for="">Explain what can be improved.</label>
+			<textarea [(ngModel)]="question.recomendations"></textarea>
+		</div>
+	</div>
+	<div class="button_next_container">
+		<a class="button-next" (click)="get_next_block()" >Next</a>
+	</div>
+</section>

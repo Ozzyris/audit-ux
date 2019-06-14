@@ -1,0 +1,136 @@
+// =============================================================================
+// IMPORT
+// =============================================================================
+@import "../../../assets/styles/ui_mixines";
+
+/*
+    MOBILE
+*/
+section.questionnaire{
+	@include container_sizing( 600px );
+	margin: 20px auto;
+
+	div.question{
+		background-color: #fff;
+		border-radius: 6px;
+		box-shadow: 0px 0px 8px rgba(black, .1);
+		position: relative;
+		padding: 20px;
+		margin-bottom: 20px;
+
+		&:before{
+			display: block;
+			content: '';
+			position: absolute;
+			bottom: 0px;
+			left: 20px;
+			right: 20px;
+			top: 99%;
+			z-index: -1;
+			background-color: #F9FAFC;
+			box-shadow: 0px 0px 10px rgba(black, 1);
+		}
+
+		p.title{
+			font-family: helvetica;
+			font-weight: 800;
+			font-size: 18px;
+			color: $primary_blue_dark;
+		}
+		p.subtitle{
+			margin-top: 10px;
+			font-family: helvetica;
+			font-weight: 400;
+			font-size: 14px;
+			color: $primary_blue_dark;
+		}
+		div.form{
+			overflow: auto;
+			margin-top: 20px;
+
+			div.button_container{
+				float: left;
+				margin-right: 10px;
+
+				a.button{
+					cursor: pointer;
+					width: 100px;
+					padding: 10px;
+					text-align: center;
+					position: relative;
+					background: linear-gradient(to right, darken($secondary_yellow_med, 5%), $secondary_yellow_med);
+					color: white;
+					text-align: center;
+					font-family: helvetica, arial;
+					font-weight: 200;
+					display: block;
+					border-radius: 5px;
+					margin:0 auto;
+
+					&.active{
+						background: darken($secondary_yellow_med, 5%);
+					}
+				}
+			}
+		}
+		div.recommendation{
+			margin-top: 20px;
+			label{
+				font-family: helvetica;
+				font-weight: 400;
+				font-size: 14px;
+				color: $primary_blue_dark;
+			}
+			textarea{
+				width: calc(100% - 20px);
+				resize: none;
+				height: 50px;
+				border-radius: 3px;
+				border: 1px solid #BABABA;
+				font-family: helvetica;
+				font-weight: 400;
+				color: $primary_blue_dark;
+				padding: 10px;
+			}
+		}
+	}
+	div.button_next_container{
+		overflow: auto;
+		width: 100%;
+		margin-top: 20px;
+
+		a.button-next{
+			float: right;
+			cursor: pointer;
+			width: 100px;
+			padding: 10px;
+			text-align: center;
+			position: relative;
+			background: linear-gradient(to right, $primary_blue_light, $primary_blue_dark);
+			color: white;
+			text-align: center;
+			font-family: helvetica, arial;
+			font-weight: 200;
+			display: block;
+			border-radius: 5px;
+			margin:0 auto;
+		}
+	}
+}
+
+
+/*
+    SMALL SCREEN COMPUTER VERSION
+*/
+@media screen and (min-width: 992px ){}
+
+/*
+    LARGE SCREEN COMPUTER VERSION
+*/
+@media screen and (min-width: 1200px ){}
+
+
+/*
+    SUPER LARGE SCREEN COMPUTER VERSION
+*/
+@media screen and (min-width: 1600px ){}

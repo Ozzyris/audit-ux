@@ -1,0 +1,41 @@
+// =============================================================================
+// IMPORT
+// =============================================================================
+@import "../assets/styles/ui_mixines";
+
+/*
+    MOBILE
+*/
+nav{
+	width: 100%;
+	height: auto;
+	background-color: $primary_blue_dark;
+	box-shadow: 0px 0px 2px rbga(black, .2);
+	border-radius: 2px;
+
+	h1.title{
+		color: white;
+		font-size: 20px;
+		padding: 12px 0 10px;
+		font-family: 'josefinsans';
+		font-weight: 800;
+		margin-left: 20px;
+	}
+}
+
+
+/*
+    SMALL SCREEN COMPUTER VERSION
+*/
+@media screen and (min-width: 992px ){}
+
+/*
+    LARGE SCREEN COMPUTER VERSION
+*/
+@media screen and (min-width: 1200px ){}
+
+
+/*
+    SUPER LARGE SCREEN COMPUTER VERSION
+*/
+@media screen and (min-width: 1600px ){}
