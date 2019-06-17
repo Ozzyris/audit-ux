@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuestionnaireComponent } from './views/questionnaire/questionnaire.component';
+import { ResultsComponent } from './views/results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionnaireComponent
+    QuestionnaireComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -19,4 +21,5 @@ import { QuestionnaireComponent } from './views/questionnaire/questionnaire.comp
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {}
