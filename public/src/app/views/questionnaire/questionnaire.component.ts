@@ -21,16 +21,12 @@ export class QuestionnaireComponent implements OnInit {
 	get_next_block(){
 		let history_length = (this.history.length - 1);
 		let last_answer = this.history[history_length].answers;
+		let is_last_answer_empty = !Object.keys(last_answer).length;
 		
-		if( last_answer == "" ){
+		if( is_last_answer_empty == true ){
 			alert( 'Please select an answer' );
 		}else{
-			let answer_length = this.history[history_length].possibleanswers.length;
-			for (var i = answer_length - 1; i >= 0; i--) {
-				if( this.history[history_length].possibleanswers[i].title == last_answer){
-					this.build_next_block( this.history[history_length].possibleanswers[i].nextquestion );
-				}
-			}
+			this.build_next_block( last_answer.nextquestion );
 		}
 	}
 
@@ -47,8 +43,21 @@ export class QuestionnaireComponent implements OnInit {
 
 	save_answer( answers ){
 		let history_length = (this.history.length - 1);
-		let last_question = this.history[history_length]
+		let last_question = this.history[history_length];
 
-		last_question.answers = answers.title
+		last_question.answers = answers;
+
+		if( last_question.answers.expectedanswer == true ){
+			last_question.results.points = last_question.answers.points;
+		}
+
+		console.log( last_question );
+	}
+
+	is_question_answerd(){
+		let history_length = (this.history.length - 1);
+		let last_answer = this.history[history_length].answers;
+
+		return !Object.keys( last_answer ).length;
 	}
 }

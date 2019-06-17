@@ -6,14 +6,15 @@
 		</div>
 		<div class="graph">
 			<div class="line">
-				<div class="marker"></div>
+				<div class="marker" [style.left]="percentage_rate + '%'"></div>
 			</div>
 		</div>
 		<div class="recomendations">
 			<ul>
-				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate odio corporis provident doloremque ullam eos enim vero, ab! Asperiores quo consectetur incidunt reiciendis, necessitatibus a quam veniam sunt vitae nam.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate odio corporis provident doloremque ullam eos enim vero, ab! Asperiores quo consectetur incidunt reiciendis, necessitatibus a quam veniam sunt vitae nam.</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate odio corporis provident doloremque ullam eos enim vero, ab! Asperiores quo consectetur incidunt reiciendis, necessitatibus a quam veniam sunt vitae nam.</li>
+
+				<div *ngFor="let question of questionnaire">
+					<li *ngIf="question.results.recomendations != ''">{{question.results.recomendations}}</li>
+				</div>
 			</ul>
 		</div>
 	</div>
