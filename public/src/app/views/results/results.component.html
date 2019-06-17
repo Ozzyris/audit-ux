@@ -1,18 +1,18 @@
 <section class="result">
-	<div class="section">
+	<div class="section" *ngFor="let section of questionnaire">
 		<div class="header">
-			<h1>Section 1</h1>
-			<p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor recusandae excepturi, iste cumque consectetur praesentium sint eaque voluptates dolorem deserunt, obcaecati libero assumenda modi voluptatum, sapiente eius iure itaque harum.</p>
+			<h1>{{section.title}}</h1>
+			<p class="subtitle">{{section.subtitle}}</p>
 		</div>
 		<div class="graph">
 			<div class="line">
-				<div class="marker" [style.left]="percentage_rate + '%'"></div>
+				<div class="marker" [style.left]="section.percentage_rate + '%'"></div>
 			</div>
 		</div>
 		<div class="recomendations">
 			<ul>
 
-				<div *ngFor="let question of questionnaire">
+				<div *ngFor="let question of section.questions">
 					<li *ngIf="question.results.recomendations != ''">{{question.results.recomendations}}</li>
 				</div>
 			</ul>
