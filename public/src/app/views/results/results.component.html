@@ -1,7 +1,7 @@
 <section class="result">
 	<div class="section" *ngFor="let section of questionnaire">
 		<div class="header">
-			<h1>{{section.title}}</h1>
+			<h1>{{section.title}} - {{section.percentage_rate}}%</h1>
 			<p class="subtitle">{{section.subtitle}}</p>
 		</div>
 		<div class="graph">

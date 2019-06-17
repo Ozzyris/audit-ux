@@ -86,7 +86,7 @@ export class QuestionnaireComponent implements OnInit {
 			earned_points += questions[i].results.points
 		}
 
-		let percentage_rate = (earned_points/total_points)*100;
+		let percentage_rate = Math.round( ((earned_points/total_points)*100) * 10 ) / 10;;
 		this.history[this.current_section].percentage_rate = percentage_rate;
 
 		//update the localstorage

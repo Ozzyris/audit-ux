@@ -61,6 +61,13 @@ section.questionnaire{
 				font-weight: 400;
 				font-size: 14px;
 				color: $primary_blue_dark;
+
+				&::ng-deep a{
+					font-family: helvetica;
+					color: darken($secondary_yellow_med, 5%);
+					cursor: pointer;
+					text-decoration: underline;
+				}
 			}
 			div.form{
 				overflow: auto;
