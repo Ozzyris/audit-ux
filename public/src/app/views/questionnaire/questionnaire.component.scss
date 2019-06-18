@@ -6,6 +6,77 @@
 /*
     MOBILE
 */
+
+section.resurection{
+	@include container_sizing( 560px );
+	margin: 10% auto 10%;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 0px 0px 8px rgba(black, .1);
+	position: relative;
+	padding: 20px;
+	
+	&:before{
+		display: block;
+		content: '';
+		position: absolute;
+		bottom: 0px;
+		left: 20px;
+		right: 20px;
+		top: 99%;
+		z-index: -1;
+		background-color: #F9FAFC;
+		box-shadow: 0px 0px 10px rgba(black, 1);
+	}
+
+	div.header{
+		img{
+			width: 150px;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+	div.body{
+		h3.title{
+			font-family: helvetica;
+			font-weight: 800;
+			font-size: 18px;
+			color: $primary_blue_dark;
+		}
+		p.description{
+			margin-top: 10px;
+			font-family: helvetica;
+			font-weight: 400;
+			font-size: 14px;
+			color: $primary_blue_dark;
+		}
+	}
+	div.footer{
+		overflow: auto;		
+
+		a{
+			float: right;
+			cursor: pointer;
+			width: 100px;
+			padding: 10px;
+			text-align: center;
+			position: relative;
+			font-family: helvetica, arial;
+			font-weight: 200;
+			display: block;
+			border-radius: 5px;
+			margin:0 auto;
+
+			&.continue{
+				background: linear-gradient(to right, darken($secondary_yellow_med, 5%), $secondary_yellow_med);
+				color: white;
+			}
+			&.new{}
+		}
+	}
+}
+
+
 section.questionnaire{
 	@include container_sizing( 600px );
 	margin: 50px auto;
@@ -124,15 +195,12 @@ section.questionnaire{
 			width: 100%;
 			margin-top: 20px;
 	
-			a.button-next{
-				float: right;
+			a{
 				cursor: pointer;
 				width: 100px;
 				padding: 10px;
 				text-align: center;
 				position: relative;
-				background: linear-gradient(to right, $primary_blue_light, $primary_blue_dark);
-				color: white;
 				text-align: center;
 				font-family: helvetica, arial;
 				font-weight: 200;
@@ -140,6 +208,15 @@ section.questionnaire{
 				border-radius: 5px;
 				margin:0 auto;
 	
+				&.button-back{
+					float: left;
+					background-color: #F2F2F2;
+				}
+				&.button-next{
+					float: right;
+					background: linear-gradient(to right, $primary_blue_light, $primary_blue_dark);
+					color: white;
+				}
 				&.disabled{
 					opacity: .5;
 				}

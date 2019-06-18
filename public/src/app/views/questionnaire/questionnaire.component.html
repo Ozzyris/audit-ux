@@ -1,3 +1,17 @@
+<section class="resurection" *ngIf="display_previous_audit">
+	<div class="header">
+		<img src="../../../assets/images/stalker.svg" alt="stalker">
+	</div>
+	<div class="body">
+		<h3 class="title">Welcome back,</h3>
+		<p class="description">I was stalking around and I noticed than than you had already started an audit, would you like to continue it?</p>
+	</div>
+	<div class="footer">
+		<a class="continue" (click)="ressurect_previous_audit()">Continue</a>
+		<a class="new" (click)="delete_previous_audit()">New audit</a>
+	</div>
+</section>
+
 <section class="questionnaire" *ngFor="let section of history; index as index">
 	<div class="inner_container" *ngIf="index == current_section">
 		<div class="header">
@@ -5,12 +19,12 @@
 			<h2 class="subtitle">{{section.subtitle}}</h2>
 		</div>
 		
- 		<div class="question" *ngFor="let question of section.questions">
+ 		<div class="question" *ngFor="let question of section.questions; index as index">
 			<p class="title">{{question.title}}</p>
 			<p class="subtitle" [innerHTML]="question.subtitle | sanitizer : 'html'"></p>
 			<div class="form">
 				<div class="button_container" *ngFor="let answers of question.possibleanswers;">
-					<a class="button" (click)="save_answer( answers )" [ngClass]="{'active': question.answers.title == answers.title}" >	{{answers.title}}</a>
+					<a class="button" (click)="save_answer( answers, index )" [ngClass]="{'active': question.answers.title == answers.title}" >	{{answers.title}}</a>
 				</div>
 			</div>
 			<div class="recommendation" *ngIf="question.answers.requestrecomendations == true">
@@ -19,7 +33,8 @@
 			</div>
 		</div>
 		<div class="button_next_container">
-			<a class="button-next" (click)="get_next_block()" [ngClass]="{'disabled': is_question_answerd() == true}">Next</a>
+			<a class="button-back" (click)="goto_previous_section()" *ngIf="current_section > 0">Back</a>
+			<a class="button-next" (click)="goto_next_section()" [ngClass]="{'disabled': is_question_answerd() == true}">Next</a>
 		</div>
 	</div>
 </section>

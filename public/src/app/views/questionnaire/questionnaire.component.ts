@@ -12,9 +12,44 @@ export class QuestionnaireComponent implements OnInit {
 	all_question: any = QUESTIONS;
 	current_section: number = 0;
 	history: any = [];
+	display_previous_audit: boolean = false;
 
 	constructor( private router: Router ){}
 	ngOnInit(){
+		this.check_previous_audit();
+	}
+
+	//RESURECTION
+	check_previous_audit(){
+		this.get_questionnaire_from_storage()
+			.then( questionnaire => {
+				if(questionnaire != null){
+					this.display_previous_audit = true;
+				}else{
+					this.launch_new_audit();
+				}
+			});
+	}
+	get_questionnaire_from_storage(): Promise<any>{
+		return new Promise((resolve, reject)=>{
+			resolve( localStorage.getItem('audit-ux') );
+		})
+	}
+	delete_previous_audit(){
+		localStorage.removeItem("audit-ux");
+		this.display_previous_audit = false;
+		this.launch_new_audit();
+	}
+	ressurect_previous_audit(){
+		this.get_questionnaire_from_storage()
+			.then( questionnaire => {
+				this.display_previous_audit = false;
+				let questionnaire_json = JSON.parse( questionnaire );
+				this.history = questionnaire_json;
+				this.current_section = (questionnaire_json.length - 1);
+			})
+	}
+	launch_new_audit(){
 		this.history.push({
 			'title': QUESTIONS['section-1'].title,
 			'subtitle': QUESTIONS['section-1'].subtitle,
@@ -23,20 +58,37 @@ export class QuestionnaireComponent implements OnInit {
 		this.history[0].questions.push( QUESTIONS['section-1'].questions['question-1'] );
 	}
 
-
-	get_next_block(){
-		let questions_length = (this.history[this.current_section].questions.length - 1);
-		let latest_answer = this.history[this.current_section].questions[questions_length].answers;
-		let is_last_answer_empty = !Object.keys(latest_answer).length;
+	//SECTION NAVIGTOR
+	goto_next_section(){
+		let questions_length = (this.history[this.current_section].questions.length - 1),
+			latest_answer = this.history[this.current_section].questions[questions_length].answers,
+			is_last_answer_empty = !Object.keys(latest_answer).length,
+			section_total = (this.history.length -1);
 		
 		if( is_last_answer_empty == true ){
 			alert( 'Please select an answer' );
+		}else if( this.current_section < section_total ){
+			this.current_section ++;
 		}else{
-			this.build_next_block( latest_answer.nextquestion );
+			this.build_next_question( latest_answer.nextquestion );
 		}
 	}
+	goto_previous_section(){
+		this.current_section --;
+	}
 
-	build_next_block( next_block_string ){
+	//QUESTION BUILING
+	save_answer( answers, index ){
+		let question_number = index,
+		last_question = this.history[this.current_section].questions[question_number];
+
+		last_question.answers = answers;
+
+		if( last_question.answers.expectedanswer == true ){
+			last_question.results.points = last_question.answers.points;
+		}
+	}
+	build_next_question( next_block_string ){
 		localStorage.setItem("audit-ux", JSON.stringify(this.history));
 		let block = next_block_string.split("/"),
 			next_section = block[0],
@@ -48,7 +100,6 @@ export class QuestionnaireComponent implements OnInit {
 			this.router.navigate(['results']);
 		}else{
 			let current_section_name = 'section-'+(this.current_section +1);
-
 			if( current_section_name == next_section){
 				this.history[this.current_section].questions.push( QUESTIONS[next_section].questions[next_question] );
 			}else{
@@ -68,6 +119,7 @@ export class QuestionnaireComponent implements OnInit {
 		}
 	}
 
+	//RESULT CALCULATOR
 	calc_percentage_rate( questions ){
 		let total_points = 0;
 		let earned_points = 0;
@@ -94,17 +146,7 @@ export class QuestionnaireComponent implements OnInit {
 
 	}
 
-	save_answer( answers ){
-		let history_length = (this.history[this.current_section].questions.length - 1);
-		let last_question = this.history[this.current_section].questions[history_length];
-
-		last_question.answers = answers;
-
-		if( last_question.answers.expectedanswer == true ){
-			last_question.results.points = last_question.answers.points;
-		}
-	}
-
+	//OTHERS
 	is_question_answerd(){
 		let questions_length = (this.history[this.current_section].questions.length - 1);
 		let latest_answer = this.history[this.current_section].questions[questions_length].answers;

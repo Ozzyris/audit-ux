@@ -20,9 +20,9 @@ export class ResultsComponent implements OnInit {
 	}
 
 	get_questionnaire_from_storage(): Promise<any>{
-    	return new Promise((resolve, reject)=>{
-      		resolve( localStorage.getItem('audit-ux') );
-    	})
+		return new Promise((resolve, reject)=>{
+			resolve( localStorage.getItem('audit-ux') );
+		})
 	}
 }
 
