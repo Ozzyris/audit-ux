@@ -12,6 +12,7 @@ nav{
 	background-color: $primary_blue_dark;
 	box-shadow: 0px 0px 2px rbga(black, .2);
 	border-radius: 2px;
+	overflow: auto;
 
 	h1.title{
 		color: white;
@@ -20,6 +21,13 @@ nav{
 		font-family: 'josefinsans';
 		font-weight: 800;
 		margin-left: 20px;
+		float: left;
+	}
+	img{
+		float: right;
+		height: 25px;
+		margin: 10px 10px; 
+
 	}
 }
 
