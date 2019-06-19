@@ -26,19 +26,16 @@ export class QuestionnaireComponent implements OnInit {
 				if(questionnaire != null){
 					this.display_previous_audit = true;
 				}else{
-					this.launch_new_audit();
+					this.build_next_section( 'section-1' );
+					this.build_next_question( 'section-1', 'question-1' );
 				}
 			});
-	}
-	get_questionnaire_from_storage(): Promise<any>{
-		return new Promise((resolve, reject)=>{
-			resolve( localStorage.getItem('audit-ux') );
-		})
 	}
 	delete_previous_audit(){
 		localStorage.removeItem("audit-ux");
 		this.display_previous_audit = false;
-		this.launch_new_audit();
+		this.build_next_section( 'section-1' );
+		this.build_next_question( 'section-1', 'question-1' );
 	}
 	ressurect_previous_audit(){
 		this.get_questionnaire_from_storage()
@@ -47,76 +44,70 @@ export class QuestionnaireComponent implements OnInit {
 				let questionnaire_json = JSON.parse( questionnaire );
 				this.history = questionnaire_json;
 				this.current_section = (questionnaire_json.length - 1);
+				let next_block = this.history[this.current_section].questions[(this.history[this.current_section].questions.length - 1)].answers.nextquestion,
+					block = next_block.split("/"),
+					next_section = block[0],
+					next_question =  block[1];
+
+				this.build_next_question( next_section, next_question );
+				console.log(next_question);
 			})
-	}
-	launch_new_audit(){
-		this.history.push({
-			'title': QUESTIONS['section-1'].title,
-			'subtitle': QUESTIONS['section-1'].subtitle,
-			'questions': []
-		})
-		this.history[0].questions.push( QUESTIONS['section-1'].questions['question-1'] );
 	}
 
 	//SECTION NAVIGTOR
-	goto_next_section(){
-		let questions_length = (this.history[this.current_section].questions.length - 1),
-			latest_answer = this.history[this.current_section].questions[questions_length].answers,
-			is_last_answer_empty = !Object.keys(latest_answer).length,
-			section_total = (this.history.length -1);
-		
-		if( is_last_answer_empty == true ){
-			alert( 'Please select an answer' );
-		}else if( this.current_section < section_total ){
-			this.current_section ++;
+	goto_next(){
+		let nb_of_section = this.history.length,
+			latest_question = this.history[this.current_section].questions.length - 1,
+			latest_answer = this.history[this.current_section].questions[ latest_question ].answers,
+			next_block = latest_answer.nextquestion;
+
+		if(next_block == "END"){
+			this.router.navigate(['results']);
 		}else{
-			this.build_next_question( latest_answer.nextquestion );
-		}
+			let block = next_block.split("/"),
+				next_section = block[0],
+				next_question =  block[1],
+				current_section_name = 'section-'+(this.current_section +1);
+
+			
+				if( current_section_name != next_section){
+					console.log( nb_of_section, (this.current_section+1), nb_of_section==(this.current_section+1) );
+					if( nb_of_section == (this.current_section+1)){
+						this.build_next_section( next_section );
+						this.current_section ++;
+						this.build_next_question( next_section, next_question );
+					}else{
+						this.current_section ++;
+					}
+				}else{
+					this.build_next_question( next_section, next_question );
+				}
+			}
 	}
-	goto_previous_section(){
+	goto_previous(){
 		this.current_section --;
 	}
 
 	//QUESTION BUILING
-	save_answer( answers, index ){
-		let question_number = index,
-		last_question = this.history[this.current_section].questions[question_number];
-
-		last_question.answers = answers;
-
-		if( last_question.answers.expectedanswer == true ){
-			last_question.results.points = last_question.answers.points;
+	save_answer( answers, question_id ){
+		for (var i = this.history[this.current_section].questions.length - 1; i >= 0; i--) {
+			if( this.history[this.current_section].questions[i].id == question_id){
+				this.history[this.current_section].questions[i].answers = answers;
+				this.history[this.current_section].questions[i].results.points = this.history[this.current_section].questions[i].answers.points;
+				this.calc_percentage_rate( this.history[this.current_section].questions );
+				localStorage.setItem("audit-ux", JSON.stringify(this.history));
+			}
 		}
 	}
-	build_next_question( next_block_string ){
-		localStorage.setItem("audit-ux", JSON.stringify(this.history));
-		let block = next_block_string.split("/"),
-			next_section = block[0],
-			next_question =  block[1];
-
-		if(next_block_string == "END"){
-			//calculate the percentage rate for the last section
-			this.calc_percentage_rate( this.history[this.current_section].questions );
-			this.router.navigate(['results']);
-		}else{
-			let current_section_name = 'section-'+(this.current_section +1);
-			if( current_section_name == next_section){
-				this.history[this.current_section].questions.push( QUESTIONS[next_section].questions[next_question] );
-			}else{
-				//calculate the percentage rate for the latest section
-				this.calc_percentage_rate( this.history[this.current_section].questions );
-				
-				//build new section
-				this.history.push({
-					'title': QUESTIONS[next_section].title,
-					'subtitle': QUESTIONS[next_section].subtitle,
-					'questions': []
-				});
-				this.current_section ++;
-				this.history[this.current_section].questions.push( QUESTIONS[next_section].questions[next_question] );
-			}
-
-		}
+	build_next_question( next_section, next_question ){
+		this.history[this.current_section].questions.push( QUESTIONS[next_section].questions[next_question] );
+	}
+	build_next_section( next_section ){
+		this.history.push({
+			'title': QUESTIONS[next_section].title,
+			'subtitle': QUESTIONS[next_section].subtitle,
+			'questions': []
+		});
 	}
 
 	//RESULT CALCULATOR
@@ -137,13 +128,9 @@ export class QuestionnaireComponent implements OnInit {
 		for (var i = questions.length - 1; i >= 0; i--) { 
 			earned_points += questions[i].results.points
 		}
-
-		let percentage_rate = Math.round( ((earned_points/total_points)*100) * 10 ) / 10;;
+		let percentage_rate = Math.round( ((earned_points/total_points)*100) * 10 ) / 10;
+		console.log(percentage_rate);
 		this.history[this.current_section].percentage_rate = percentage_rate;
-
-		//update the localstorage
-		localStorage.setItem("audit-ux", JSON.stringify(this.history));
-
 	}
 
 	//OTHERS
@@ -152,5 +139,10 @@ export class QuestionnaireComponent implements OnInit {
 		let latest_answer = this.history[this.current_section].questions[questions_length].answers;
 
 		return !Object.keys( latest_answer ).length;
+	}
+	get_questionnaire_from_storage(): Promise<any>{
+		return new Promise((resolve, reject)=>{
+			resolve( localStorage.getItem('audit-ux') );
+		})
 	}
 }

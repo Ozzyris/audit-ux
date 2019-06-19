@@ -5,7 +5,8 @@ export const QUESTIONS = {
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
-				'title': 'Is the website personalize to the user settings?',
+				'id': 'section-1/question-1',
+				'title': '[section1] - Is the website personalize to the user settings?',
 				'subtitle': 'currency, language, country, taxes, delivery',
 				'possibleanswers': [
 					{
@@ -32,7 +33,8 @@ export const QUESTIONS = {
 				}
 			}, 
 			'question-2': {
-				'title': 'Is registering provides value to users?',
+				'id': 'section-1/question-2',
+				'title': '[section1] - Is registering provides value to users?',
 				'subtitle': 'A button called ‘Free trial’ communicates a clear benefit, but ‘Register’ doesn’t.',
 				'possibleanswers': [
 					{
@@ -59,7 +61,8 @@ export const QUESTIONS = {
 				}
 			}, 
 			'question-3': {
-				'title': 'Are the pricings transparent?',
+				'id': 'section-1/question-3',
+				'title': '[section1] - Are the pricings transparent?',
 				'subtitle': 'Prices are clearly displayed, you can have an easy overview of the different features in different tarifs, there are no hidden costs.',
 				'possibleanswers': [
 					{
@@ -86,7 +89,8 @@ export const QUESTIONS = {
 				}
 			}, 
 			'question-4': {
-				'title': 'Is there sample content?',
+				'id': 'section-1/question-4',
+				'title': '[section1] - Is there sample content?',
 				'subtitle': 'There is a sample of the newsletter next to the newsletter sign up form.',
 				'possibleanswers': [
 					{
@@ -113,7 +117,8 @@ export const QUESTIONS = {
 				}
 			}, 
 			'question-5': {
-				'title': 'Is the website credible?',
+				'id': 'section-1/question-5',
+				'title': '[section1] - Is the website credible?',
 				'subtitle': 'Credible references, credentions, contact details, images of real people are displayed.',
 				'possibleanswers': [
 					{
@@ -140,7 +145,8 @@ export const QUESTIONS = {
 				}
 			}, 
 			'question-6': {
-				'title': 'Uncluttered product and service information?',
+				'id': 'section-1/question-6',
+				'title': '[section1] - Uncluttered product and service information?',
 				'subtitle': 'Information is scannable, images can be enlarged or zoomed in on for more detailed viewing.',
 				'possibleanswers': [
 					{
@@ -174,7 +180,8 @@ export const QUESTIONS = {
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
-				'title': 'Are all the actions clear call?',
+				'id': 'section-2/question-1',
+				'title': '[section 2] - Are all the actions clear call?',
 				'subtitle': 'users know what to do next and why it benefits them. They understand the value proposition of the site',
 				'possibleanswers': [
 					{
@@ -201,7 +208,8 @@ export const QUESTIONS = {
 				}
 			},
 			'question-2': {
-				'title': 'Is it a positive first impression?',
+				'id': 'section-2/question-2',
+				'title': '[section 2] - Is it a positive first impression?',
 				'subtitle': 'The homepage creates a positive first impression and supports conversion',
 				'possibleanswers': [
 					{
@@ -228,7 +236,8 @@ export const QUESTIONS = {
 				}
 			},
 			'question-3': {
-				'title': 'Are the user’s name displayed for logged in users?',
+				'id': 'section-2/question-3',
+				'title': '[section 2] - Are the user’s name displayed for logged in users?',
 				'subtitle': 'Hello Jack, Welcome mr. Smith',
 				'possibleanswers': [
 					{
@@ -255,7 +264,8 @@ export const QUESTIONS = {
 				}
 			},
 			'question-4': {
-				'title': 'Are the major changes annonced?',
+				'id': 'section-2/question-4',
+				'title': '[section 2] - Are the major changes annonced?',
 				'subtitle': 'For example changes in the delivery policy or website downtimes / maintenance on banking apps',
 				'possibleanswers': [
 					{
@@ -282,7 +292,8 @@ export const QUESTIONS = {
 				}
 			},
 			'question-5': {
-				'title': 'Is the company location and contact information available?',
+				'id': 'section-2/question-5',
+				'title': '[section 2] - Is the company location and contact information available?',
 				'subtitle': 'It need to be easily accessible from the Homepage',
 				'possibleanswers': [
 					{
@@ -309,7 +320,8 @@ export const QUESTIONS = {
 				}
 			},
 			'question-6': {
-				'title': 'Is their a privacy policy?',
+				'id': 'section-2/question-6',
+				'title': '[section 2] - Is their a privacy policy?',
 				'subtitle': 'In case the site gathers information of users.',
 				'possibleanswers': [
 					{
@@ -336,7 +348,8 @@ export const QUESTIONS = {
 				}
 			},
 			'question-7': {
-				'title': 'Are the images are relevant and meaningful?',
+				'id': 'section-2/question-7',
+				'title': '[section 2] - Are the images are relevant and meaningful?',
 				'subtitle': 'No unrelated stock photo’s or models, there are high quality pictures of the product or service.',
 				'possibleanswers': [
 					{
@@ -363,7 +376,8 @@ export const QUESTIONS = {
 				}
 			},
 			'question-8': {
-				'title': 'Is the site url works with or without www?',
+				'id': 'section-2/question-8',
+				'title': '[section 2] - Is the site url works with or without www?',
 				'subtitle': 'To avoid user to get lost with url change.',
 				'possibleanswers': [
 					{
@@ -397,6 +411,7 @@ export const QUESTIONS = {
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
+				'id': 'section-3/question-1',
 				'title': 'Does all non-text elements have alt attribtues?',
 				'subtitle': 'Such as images, maps, sounds and video',
 				'possibleanswers': [
@@ -424,6 +439,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-2': {
+				'id': 'section-3/question-2',
 				'title': 'Is color alone is used to convey information?',
 				'subtitle': 'Color-blind people might get confuse.',
 				'possibleanswers': [
@@ -451,6 +467,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-3': {
+				'id': 'section-3/question-3',
 				'title': 'is the content is readable without a stylesheet?',
 				'subtitle': 'Blind people use voice recognition who read pure html.',
 				'possibleanswers': [
@@ -478,6 +495,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-4': {
+				'id': 'section-3/question-4',
 				'title': 'Does the website use flash?',
 				'subtitle': 'Flash is a blackbox to text recognition, and confuse everyone.',
 				'possibleanswers': [
@@ -505,6 +523,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-5': {
+				'id': 'section-3/question-5',
 				'title': 'Are links buttons and checkboxes are easily clickable?',
 				'subtitle': 'A user can select a checkbox by clicking the text, not just the checkbox. The element also have sufficient margin on mobile.',
 				'possibleanswers': [
@@ -532,6 +551,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-6': {
+				'id': 'section-3/question-6',
 				'title': 'Is there a site description in the window title?',
 				'subtitle': 'Which is easily understandable as a bookmark',
 				'possibleanswers': [
@@ -566,6 +586,7 @@ export const QUESTIONS = {
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
+				'id': 'section-4/question-1',
 				'title': 'Are important links placed in moving features?',
 				'subtitle': 'For example auto-rotating carousels',
 				'possibleanswers': [
@@ -593,6 +614,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-2': {
+				'id': 'section-4/question-2',
 				'title': 'Is alphabetical A-Z sorting is avoided?',
 				'subtitle': 'It is used only when there are no better alternatives such as grouping items into related groups',
 				'possibleanswers': [
@@ -620,6 +642,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-3': {
+				'id': 'section-4/question-3',
 				'title': 'Does the user know where he is on the site at all time?',
 				'subtitle': 'By using breadcrumb, or common navigation pattern',
 				'possibleanswers': [
@@ -647,6 +670,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-4': {
+				'id': 'section-4/question-4',
 				'title': 'Is the navigation is consistent on every page?',
 				'subtitle': 'Inconsistent navigation often confuse people, and reduce retention rate',
 				'possibleanswers': [
@@ -674,6 +698,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-5': {
+				'id': 'section-4/question-5',
 				'title': 'Is the browser’s ‘back’ button is disabled?',
 				'subtitle': 'Often when lost peoples will use this button as a lifeline',
 				'possibleanswers': [
@@ -701,6 +726,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-6': {
+				'id': 'section-4/question-6',
 				'title': 'Are the links descriptive?',
 				'subtitle': 'hover effects are used on navigation links, and the titles clearly explains where the call to action leads to. No ‘click here’ links',
 				'possibleanswers': [
@@ -728,6 +754,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-7': {
+				'id': 'section-4/question-7',
 				'title': 'Is the site’s url is memorable?',
 				'subtitle': 'This will help user in their search later on.',
 				'possibleanswers': [
@@ -762,6 +789,7 @@ export const QUESTIONS = {
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
+				'id': 'section-5/question-1',
 				'title': 'Is there is a search bar?',
 				'subtitle': 'in case of a large website, or large amount of informations.',
 				'possibleanswers': [
@@ -797,6 +825,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-2': {
+				'id': 'section-5/question-2',
 				'title': 'Is the search is available on every page?',
 				'subtitle': 'not just the homepage',
 				'possibleanswers': [
@@ -824,6 +853,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-3': {
+				'id': 'section-5/question-3',
 				'title': 'Is the search box is wide enough?',
 				'subtitle': 'so that users can see what they’ve typed',
 				'possibleanswers': [
@@ -851,6 +881,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-4': {
+				'id': 'section-5/question-4',
 				'title': 'Is the search a form?',
 				'subtitle': 'where users can type search words immediately, not a link',
 				'possibleanswers': [
@@ -885,6 +916,7 @@ export const QUESTIONS = {
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
+				'id': 'section-6/question-1',
 				'title': 'Are the important call to actions displayed as buttons?',
 				'subtitle': 'not link',
 				'possibleanswers': [
@@ -912,6 +944,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-2': {
+				'id': 'section-6/question-2',
 				'title': 'Are links open a new browser tab or window?',
 				'subtitle': 'unless it is a .pdf file',
 				'possibleanswers': [
@@ -939,6 +972,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-3': {
+				'id': 'section-6/question-3',
 				'title': 'Are links easily recognizable?',
 				'subtitle': 'They look clickable. Text that is not clickable should not be underlined',
 				'possibleanswers': [
@@ -966,6 +1000,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-4': {
+				'id': 'section-6/question-4',
 				'title': 'Is visited links color different than unvisited?',
 				'subtitle': 'To help the user know which path he took.',
 				'possibleanswers': [
@@ -993,6 +1028,7 @@ export const QUESTIONS = {
 				}
 			},
 			'question-5': {
+				'id': 'section-6/question-5',
 				'title': 'Is there broken links?',
 				'subtitle': 'Do a check with a <a href="https://www.brokenlinkcheck.com/" target="_blank">link checker</a>',
 				'possibleanswers': [
