@@ -50,7 +50,6 @@ export class QuestionnaireComponent implements OnInit {
 					next_question =  block[1];
 
 				this.build_next_question( next_section, next_question );
-				console.log(next_question);
 			})
 	}
 
@@ -123,13 +122,11 @@ export class QuestionnaireComponent implements OnInit {
 		 		}
 			}	
 		}
-
 		//get earned points
 		for (var i = questions.length - 1; i >= 0; i--) { 
 			earned_points += questions[i].results.points
 		}
 		let percentage_rate = Math.round( ((earned_points/total_points)*100) * 10 ) / 10;
-		console.log(percentage_rate);
 		this.history[this.current_section].percentage_rate = percentage_rate;
 	}
 

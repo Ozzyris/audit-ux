@@ -6,7 +6,7 @@ export const QUESTIONS = {
 		'questions': {
 			'question-1': {
 				'id': 'section-1/question-1',
-				'title': '[section1] - Is the website personalize to the user settings?',
+				'title': 'Is the website personalize to the user settings?',
 				'subtitle': 'currency, language, country, taxes, delivery',
 				'possibleanswers': [
 					{
@@ -34,7 +34,7 @@ export const QUESTIONS = {
 			}, 
 			'question-2': {
 				'id': 'section-1/question-2',
-				'title': '[section1] - Is registering provides value to users?',
+				'title': 'Is registering provides value to users?',
 				'subtitle': 'A button called ‘Free trial’ communicates a clear benefit, but ‘Register’ doesn’t.',
 				'possibleanswers': [
 					{
@@ -62,7 +62,7 @@ export const QUESTIONS = {
 			}, 
 			'question-3': {
 				'id': 'section-1/question-3',
-				'title': '[section1] - Are the pricings transparent?',
+				'title': 'Are the pricings transparent?',
 				'subtitle': 'Prices are clearly displayed, you can have an easy overview of the different features in different tarifs, there are no hidden costs.',
 				'possibleanswers': [
 					{
@@ -90,7 +90,7 @@ export const QUESTIONS = {
 			}, 
 			'question-4': {
 				'id': 'section-1/question-4',
-				'title': '[section1] - Is there sample content?',
+				'title': 'Is there sample content?',
 				'subtitle': 'There is a sample of the newsletter next to the newsletter sign up form.',
 				'possibleanswers': [
 					{
@@ -118,7 +118,7 @@ export const QUESTIONS = {
 			}, 
 			'question-5': {
 				'id': 'section-1/question-5',
-				'title': '[section1] - Is the website credible?',
+				'title': 'Is the website credible?',
 				'subtitle': 'Credible references, credentions, contact details, images of real people are displayed.',
 				'possibleanswers': [
 					{
@@ -146,7 +146,7 @@ export const QUESTIONS = {
 			}, 
 			'question-6': {
 				'id': 'section-1/question-6',
-				'title': '[section1] - Uncluttered product and service information?',
+				'title': 'Uncluttered product and service information?',
 				'subtitle': 'Information is scannable, images can be enlarged or zoomed in on for more detailed viewing.',
 				'possibleanswers': [
 					{
@@ -181,7 +181,7 @@ export const QUESTIONS = {
 		'questions': {
 			'question-1': {
 				'id': 'section-2/question-1',
-				'title': '[section 2] - Are all the actions clear call?',
+				'title': 'Are all the actions clear call?',
 				'subtitle': 'users know what to do next and why it benefits them. They understand the value proposition of the site',
 				'possibleanswers': [
 					{
@@ -209,7 +209,7 @@ export const QUESTIONS = {
 			},
 			'question-2': {
 				'id': 'section-2/question-2',
-				'title': '[section 2] - Is it a positive first impression?',
+				'title': 'Is it a positive first impression?',
 				'subtitle': 'The homepage creates a positive first impression and supports conversion',
 				'possibleanswers': [
 					{
@@ -237,7 +237,7 @@ export const QUESTIONS = {
 			},
 			'question-3': {
 				'id': 'section-2/question-3',
-				'title': '[section 2] - Are the user’s name displayed for logged in users?',
+				'title': 'Are the user’s name displayed for logged in users?',
 				'subtitle': 'Hello Jack, Welcome mr. Smith',
 				'possibleanswers': [
 					{
@@ -265,7 +265,7 @@ export const QUESTIONS = {
 			},
 			'question-4': {
 				'id': 'section-2/question-4',
-				'title': '[section 2] - Are the major changes annonced?',
+				'title': 'Are the major changes annonced?',
 				'subtitle': 'For example changes in the delivery policy or website downtimes / maintenance on banking apps',
 				'possibleanswers': [
 					{
@@ -293,7 +293,7 @@ export const QUESTIONS = {
 			},
 			'question-5': {
 				'id': 'section-2/question-5',
-				'title': '[section 2] - Is the company location and contact information available?',
+				'title': 'Is the company location and contact information available?',
 				'subtitle': 'It need to be easily accessible from the Homepage',
 				'possibleanswers': [
 					{
@@ -321,7 +321,7 @@ export const QUESTIONS = {
 			},
 			'question-6': {
 				'id': 'section-2/question-6',
-				'title': '[section 2] - Is their a privacy policy?',
+				'title': 'Is their a privacy policy?',
 				'subtitle': 'In case the site gathers information of users.',
 				'possibleanswers': [
 					{
@@ -349,7 +349,7 @@ export const QUESTIONS = {
 			},
 			'question-7': {
 				'id': 'section-2/question-7',
-				'title': '[section 2] - Are the images are relevant and meaningful?',
+				'title': 'Are the images are relevant and meaningful?',
 				'subtitle': 'No unrelated stock photo’s or models, there are high quality pictures of the product or service.',
 				'possibleanswers': [
 					{
@@ -377,7 +377,7 @@ export const QUESTIONS = {
 			},
 			'question-8': {
 				'id': 'section-2/question-8',
-				'title': '[section 2] - Is the site url works with or without www?',
+				'title': 'Is the site url works with or without www?',
 				'subtitle': 'To avoid user to get lost with url change.',
 				'possibleanswers': [
 					{
@@ -1036,6 +1036,734 @@ export const QUESTIONS = {
 						'order': 1,
 						'title': 'yes',
 						'requestrecomendations': true,
+						'nextquestion': 'section-7/question-1',
+						'expectedanswer': false,
+						'points': 0,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': false,
+						'nextquestion': 'section-7/question-1',
+						'expectedanswer': true,
+						'points': 1,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+		}
+	},
+	'section-7': {
+		'title': 'Layout',
+		'subtitle': 'A good layout will help your user make sence of your website and find what they are looking for.',
+		'percentage_rate': 0,
+		'questions': {
+			'question-1': {
+				'id': 'section-7/question-1',
+				'title': 'Are the important content displayed first?',
+				'subtitle': 'to be determined',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-7/question-2',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-7/question-2',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-2': {
+				'id': 'section-7/question-2',
+				'title': 'Is the site responsive?',
+				'subtitle': 'to be determined',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-7/question-3',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-7/question-3',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-3': {
+				'id': 'section-7/question-3',
+				'title': 'Are related informations grouped together clearly?',
+				'subtitle': 'to be determined',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-7/question-4',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-7/question-4',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-4': {
+				'id': 'section-7/question-4',
+				'title': 'Is there an excess of pop-up windows?',
+				'subtitle': 'to be determined',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': true,
+						'nextquestion': 'section-7/question-5',
+						'expectedanswer': false,
+						'points': 0,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': false,
+						'nextquestion': 'section-7/question-5',
+						'expectedanswer': true,
+						'points': 1,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-5': {
+				'id': 'section-7/question-5',
+				'title': 'Is the website consistent?',
+				'subtitle': 'Page layouts are consistent across the whole website',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-7/question-6',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-7/question-6',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-6': {
+				'id': 'section-7/question-6',
+				'title': 'Is the pages cluttered?',
+				'subtitle': 'there is enough white space to support scanning',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': true,
+						'nextquestion': 'section-8/question-1',
+						'expectedanswer': false,
+						'points': 0,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': false,
+						'nextquestion': 'section-8/question-1',
+						'expectedanswer': true,
+						'points': 1,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+		}
+	},
+	'section-8': {
+		'title': 'Process',
+		'subtitle': 'Not everything is visuel, the behind the scene is as important as your final product.',
+		'percentage_rate': 0,
+		'questions': {
+			'question-1': {
+				'id': 'section-8/question-1',
+				'title': 'Does the client use issue tracking?',
+				'subtitle': 'usability and user experience issues are tracked in an issue tracker',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-8/question-2',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-8/question-2',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-2': {
+				'id': 'section-8/question-2',
+				'title': 'Does the client have user testing session with target users?',
+				'subtitle': 'and done at different stages of the project',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-8/question-3',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-8/question-3',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-3': {
+				'id': 'section-8/question-3',
+				'title': 'Does the client prioritizing his task?',
+				'subtitle': 'changes are prioritized based on their importance',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-8/question-4',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-8/question-4',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-4': {
+				'id': 'section-8/question-4',
+				'title': 'Does the client analysized the impact of changes?',
+				'subtitle': 'changes might be expensive and time consuming. Therefore it’s important to analyze the impact',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-8/question-5',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-8/question-5',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-5': {
+				'id': 'section-8/question-5',
+				'title': 'Does the client changes have a ROI plan?',
+				'subtitle': 'changes might be expensive and time consuming. Therefore it’s important to analyze the impact',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-9/question-1',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-9/question-1',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+		}
+	},
+	'section-9': {
+		'title': 'Forms',
+		'subtitle': 'Form can me the most pain taking part of a website, well structuring them is key to success.',
+		'percentage_rate': 0,
+		'questions': {
+			'question-1': {
+				'id': 'section-9/question-1',
+				'title': 'Are the forms simple?',
+				'subtitle': 'only the absolutely necessary questions are asked in forms',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-9/question-2',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-9/question-2',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-2': {
+				'id': 'section-9/question-2',
+				'title': 'Does the form avoid long dropdown menus?',
+				'subtitle': 'instead users can input text',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-9/question-3',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-9/question-3',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-3': {
+				'id': 'section-9/question-3',
+				'title': 'Are inputting data flexible?',
+				'subtitle': 'for example with phone numbers or birth dates',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-9/question-4',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-9/question-4',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-4': {
+				'id': 'section-9/question-4',
+				'title': 'Are fields labeled with common terms?',
+				'subtitle': 'name, address',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-9/question-5',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-9/question-5',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-5': {
+				'id': 'section-9/question-5',
+				'title': 'Is autofill enabled?',
+				'subtitle': 'to be determinded',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-9/question-6',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-9/question-6',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-6': {
+				'id': 'section-9/question-6',
+				'title': 'Does fields contain sample answers?',
+				'subtitle': 'which help users to input information',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-9/question-7',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-9/question-7',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-7': {
+				'id': 'section-9/question-7',
+				'title': 'Are tooltips provided, when needed?',
+				'subtitle': 'To be determined',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-9/question-8',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-9/question-8',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-8': {
+				'id': 'section-9/question-8',
+				'title': 'Does the form have a confirmation page?',
+				'subtitle': 'To be determined',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-9/question-9',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-9/question-9',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-9': {
+				'id': 'section-9/question-9',
+				'title': 'Are the error messages shown next to the input field?',
+				'subtitle': 'Not just on the top or button of the page',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-10/question-1',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-10/question-1',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+		}
+	},
+	'section-10': {
+		'title': 'Content',
+		'subtitle': 'People come to a website for its content not its design, make it count.',
+		'percentage_rate': 0,
+		'questions': {
+			'question-1': {
+				'id': 'section-10/question-1',
+				'title': 'Is there sufficient contrast?',
+				'subtitle': 'There is adequate contrast between the text and background',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-10/question-2',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-10/question-2',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-2': {
+				'id': 'section-10/question-2',
+				'title': 'Is the content scannable?',
+				'subtitle': 'by using short paragraphs, descriptive headings, lists, fat keywords',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-10/question-3',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-10/question-3',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-3': {
+				'id': 'section-10/question-3',
+				'title': 'Is the content written with common language?',
+				'subtitle': 'that users easily understand',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-10/question-4',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-10/question-4',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-4': {
+				'id': 'section-10/question-4',
+				'title': 'Is the content useful and up-to-date?',
+				'subtitle': 'providing answers to the most common questions asked by users. there are no long instructions or ‘welcome to our website’ text',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': false,
+						'nextquestion': 'section-10/question-5',
+						'expectedanswer': true,
+						'points': 1,
+					},
+					{
+						'order': 2,
+						'title': 'no',
+						'requestrecomendations': true,
+						'nextquestion': 'section-10/question-5',
+						'expectedanswer': false,
+						'points': 0,
+					}
+				],
+				'answers': {},
+				'results': {
+					'points': 0,
+					'recomendations': ''
+				}
+			},
+			'question-5': {
+				'id': 'section-10/question-5',
+				'title': 'Does the website use of uppercase letters in prose?',
+				'subtitle': 'to be determine',
+				'possibleanswers': [
+					{
+						'order': 1,
+						'title': 'yes',
+						'requestrecomendations': true,
 						'nextquestion': 'END',
 						'expectedanswer': false,
 						'points': 0,
@@ -1056,29 +1784,5 @@ export const QUESTIONS = {
 				}
 			},
 		}
-	},
-	'section-7': {
-		'title': 'Layout',
-		'subtitle': 'A good layout will help your user make sence of your website and find what they are looking for.',
-		'percentage_rate': 0,
-		'questions': {}
-	},
-	'section-8': {
-		'title': 'Process',
-		'subtitle': 'Not everything is visuel, the behind the scene is as important as your final product.',
-		'percentage_rate': 0,
-		'questions': {}
-	},
-	'section-9': {
-		'title': 'Forms',
-		'subtitle': 'Form can me the most pain taking part of a website, well structuring them is key to success.',
-		'percentage_rate': 0,
-		'questions': {}
-	},
-	'section-10': {
-		'title': 'Content',
-		'subtitle': 'People come to a website for its content not its design, make it count.',
-		'percentage_rate': 0,
-		'questions': {}
 	}
 };
