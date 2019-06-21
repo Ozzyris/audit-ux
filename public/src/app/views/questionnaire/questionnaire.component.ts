@@ -12,6 +12,7 @@ export class QuestionnaireComponent implements OnInit {
 	all_question: any = QUESTIONS;
 	current_section: number = 0;
 	history: any = [];
+	breadcrumbs: any = ['User Experience', 'Homepage', 'Accessibility', 'Navigation', 'Search', 'Links', 'Layout', 'Process', 'Forms', 'Content'];
 	display_previous_audit: boolean = false;
 
 	constructor( private router: Router ){}
@@ -70,7 +71,6 @@ export class QuestionnaireComponent implements OnInit {
 
 			
 				if( current_section_name != next_section){
-					console.log( nb_of_section, (this.current_section+1), nb_of_section==(this.current_section+1) );
 					if( nb_of_section == (this.current_section+1)){
 						this.build_next_section( next_section );
 						this.current_section ++;

@@ -1,17 +1,32 @@
-<section class="result">
-	<div class="section" *ngFor="let section of questionnaire">
+<section class="header">
+	<img src="../assets/images/logo_white.svg" alt="logo">
+</section>
+
+<section class="chart">
+	<h1>Results of the UX Audit</h1>
+	<p class="time">Monday 12th of August, 12:40pm</p>
+	<canvas baseChart [datasets]="charts_datasets" [options]="charts_options" [labels]="charts_label" [chartType]="'polarArea'"></canvas>
+</section>
+
+<section class="questionnaire" *ngFor="let section of questionnaire">
+	<div class="graph">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200" height="200" viewBox="0 0 200 200">
+			<g class="svg_g">   
+				<path class="fmo-gauge__bg" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0 Z" stroke-linecap="butt" stroke-width="20px" fill="none" stroke="rgb(240, 245, 240)"></path>   
+				<path class="fmo-gauge__fill" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0 Z" stroke-linecap="butt" stroke-width="20px" fill="none" stroke="rgb(238, 255, 0)" [ngStyle]="{'strokeDashoffset': section.percentage_rate | gaugeConvertor, 'stroke': get_color(section.percentage_rate)}"></path>
+			</g>
+		</svg>
+		<div class="number">
+			<h1>{{section.percentage_rate}}<span>%</span></h1>
+		</div>
+	</div>
+	<div class="content">
 		<div class="header">
 			<h1>{{section.title}} - {{section.percentage_rate}}%</h1>
 			<p class="subtitle">{{section.subtitle}}</p>
 		</div>
-		<div class="graph">
-			<div class="line">
-				<div class="marker" [style.left]="section.percentage_rate + '%'"></div>
-			</div>
-		</div>
 		<div class="recomendations">
 			<ul>
-
 				<div *ngFor="let question of section.questions">
 					<li *ngIf="question.results.recomendations != ''">{{question.results.recomendations}}</li>
 				</div>

@@ -4,12 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//EXTERNAL PACKAGE
+import { ChartsModule } from 'ng2-charts';
+
 //VIEWS
 import { QuestionnaireComponent } from './views/questionnaire/questionnaire.component';
 import { ResultsComponent } from './views/results/results.component';
 
 //PIPES
 import { SanitizerPipe } from './pipes/sanitizer/sanitizer.pipe';
+import { GaugeConvertorPipe } from './pipes/gauge_convertor/gauge-convertor.pipe';
 
 //DIRECTIVES
 
@@ -19,11 +23,13 @@ import { SanitizerPipe } from './pipes/sanitizer/sanitizer.pipe';
     QuestionnaireComponent,
     ResultsComponent,
     SanitizerPipe,
+    GaugeConvertorPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

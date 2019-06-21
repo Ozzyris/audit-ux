@@ -1,3 +1,9 @@
+<section class="breadcrumb">
+	<ul>
+		<li *ngFor="let breadcrumb of breadcrumbs; index as index" [ngClass]="{'active': index == current_section, 'disabled': index > history.length}" (click)="current_section = index">{{breadcrumb}}</li>
+	</ul>
+</section>
+
 <section class="resurection" *ngIf="display_previous_audit">
 	<div class="header">
 		<img src="../../../assets/images/stalker.svg" alt="stalker">

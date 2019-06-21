@@ -1,74 +1,136 @@
-// =============================================================================
-// IMPORT
-// =============================================================================
+/* IMPORTS */
 @import "../../../assets/styles/ui_mixines";
 
 /*
-    MOBILE
+    PHONE VERSION
 */
-section.result{
-	@include container_sizing( 600px );
-	margin: 50px auto;
+section.header{
+	@include container_sizing( 700px );
+	background: radial-gradient(circle, rgba(9,9,121,0.5) 0%, rgba(0,212,255,0.2) 100%), url(../../../assets/images/result_audits.jpg) ;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-position: center center;
+	margin-top: 30px;
+	border-radius: 2px;
 
-	div.section{
-		margin: 50px 0 50px 0;
+	img{
+		width: 400px;
+		margin: 0 auto;
+		display: block;
+		padding: 40px 0;
 
-		&:after{
-			position: relative;
-			content: '';
-			display: block;
-			width: 70%;
-			margin: 50px auto 0;
-			height: 1px;
-			background-color: $primary_blue_dark;
+	}
+}
+
+section.chart{
+	@include container_sizing( 700px );
+	margin-top: 40px;
+
+	h1{
+		font-family: helvetica;
+		font-weight: 800;
+		font-size: 24px;
+		color: $primary_blue_dark;
+	}
+	p.time{
+		margin-top: 5px;
+		font-family: helvetica;
+		font-weight: 400;
+		font-size: 14px;
+		color: $primary_blue_dark;
+		margin-bottom: 20px;
+	}
+	canvas{
+		width: 100%;
+	}
+}
+
+section.questionnaire{
+	@include container_sizing( 700px );
+	overflow: auto;
+	margin-top: 50px;
+	padding-bottom: 50px;
+
+	div.graph{
+		width: 150px;
+		height: 150px;
+		float: left;
+		position: relative;
+
+		svg{
+			x: 0px;
+			y: 0px;
+			width: 150px;
+			height: 150px;
+			transform: rotate(-35.999999999999986deg);
+		  
+			path{
+				&.fmo-gauge__bg{
+					stroke-dasharray: 351 9999;
+					stroke-dashoffset: 0;
+				}
+				&.fmo-gauge__fill{
+					stroke-dasharray: 502 9999;
+					stroke-dashoffset: 502;
+					transition: stroke-dashoffset 1s ease-in;
+				  
+					&.active{
+						stroke-dashoffset: 200;
+					}
+				}
+			}
 		}
+		div.number{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: spance-around;
+
+			h1{
+				
+				font-family: 'josefinsans';
+				font-size: 40px;
+				font-weight: 800;
+				color: $primary_blue_dark;
+				text-align: center;
+				width: 100%;
+
+				span{
+					font-weight: 400;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	div.content{
+		width: calc(100% - 170px);
+		padding-left: 20px;
+		height: 100px;
+		float: left;
+		margin-top: 30px;
+
 		div.header{
 			h1{
 				font-family: helvetica;
 				font-weight: 800;
-				font-size: 18px;
+				font-size: 24px;
 				color: $primary_blue_dark;
 			}
 			p.subtitle{
 				margin-top: 10px;
 				font-family: helvetica;
 				font-weight: 400;
-				font-size: 14px;
+				font-size: 16px;
 				color: $primary_blue_dark;
 			}
 		}
-		div.graph{
-			div.line{
-				margin-top: 40px;
-				width: 100%;
-				height: 20px;
-				background: linear-gradient(to right, #ff0000, #fff200, #1e9600);
-				position: relative;
-
-				div.marker{
-					position: absolute;
-					width: 10px;
-					height:30px;
-					background-color: #DEDEDE;
-					top: -5px;
-					left: 50%;
-
-					&:before{
-						content: '';
-						border-bottom: 0;
-						border-left: 5px solid transparent;
-						border-right: 5px solid transparent;
-						border-top: 5px solid #DEDEDE;
-						display: block;
-						position: absolute;
-						bottom: -5px;
-						left: 0;
-					}
-				}
-			}
-		}
 		div.recomendations{
-			margin-top: 40px;
+			margin-top: 30px;
 
 			ul{
 				li{
@@ -76,26 +138,10 @@ section.result{
 					margin: 10px 0 0 20px;
 					font-family: helvetica;
 					font-weight: 400;
-					font-size: 14px;
+					font-size: 16px;
 					color: $primary_blue_dark;
 				}
 			}
 		}
 	}
 }
-
-/*
-    SMALL SCREEN COMPUTER VERSION
-*/
-@media screen and (min-width: 992px ){}
-
-/*
-    LARGE SCREEN COMPUTER VERSION
-*/
-@media screen and (min-width: 1200px ){}
-
-
-/*
-    SUPER LARGE SCREEN COMPUTER VERSION
-*/
-@media screen and (min-width: 1600px ){}
