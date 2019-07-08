@@ -10,6 +10,7 @@ import { ChartsModule } from 'ng2-charts';
 //VIEWS
 import { QuestionnaireComponent } from './views/questionnaire/questionnaire.component';
 import { ResultsComponent } from './views/results/results.component';
+import { HomeComponent } from './views/home/home.component';
 
 //PIPES
 import { SanitizerPipe } from './pipes/sanitizer/sanitizer.pipe';
@@ -24,6 +25,7 @@ import { GaugeConvertorPipe } from './pipes/gauge_convertor/gauge-convertor.pipe
     ResultsComponent,
     SanitizerPipe,
     GaugeConvertorPipe,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

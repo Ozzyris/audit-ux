@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QUESTIONS } from '../../../assets/json/questionnaire';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'app-questionnaire',
@@ -15,11 +15,18 @@ export class QuestionnaireComponent implements OnInit {
 	breadcrumbs: any = ['User Experience', 'Homepage', 'Accessibility', 'Navigation', 'Search', 'Links', 'Layout', 'Process', 'Forms', 'Content'];
 	display_previous_audit: boolean = false;
 
-	constructor( private router: Router ){}
+	constructor( private router: Router, private route: ActivatedRoute ){}
 	ngOnInit(){
-		this.check_previous_audit();
+		this.get_questionnaire_type();
+		// this.check_previous_audit();
 	}
 
+	//QUESTIONNAIRE TYPE
+	get_questionnaire_type(){
+		this.route.params.subscribe( params => {
+      		console.log( params.type );
+		})
+	}
 	//RESURECTION
 	check_previous_audit(){
 		this.get_questionnaire_from_storage()

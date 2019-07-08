@@ -1,0 +1,113 @@
+// =============================================================================
+// IMPORT
+// =============================================================================
+@import "../../../assets/styles/ui_mixines";
+
+/*
+    MOBILE
+*/
+section.header{
+	@include container_sizing( 650px );
+	background: radial-gradient(circle, rgba(9,9,121,0.5) 0%, rgba(0,212,255,0.2) 100%), url(../../../assets/images/result_audits.jpg) ;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-position: center center;
+	margin-top: 30px;
+	border-radius: 2px;
+
+	img{
+		width: 400px;
+		margin: 0 auto;
+		display: block;
+		padding: 40px 0;
+
+	}
+}
+section.home{
+	@include container_sizing( 650px );
+	margin: 50px auto;
+
+	div.introduction{
+		p{
+			font-family: helvetica;
+			font-weight: 400;
+			font-size: 14px;
+			color: $primary_blue_dark;
+		}
+		a{
+			font-family: helvetica;
+			font-weight: 400;
+			font-size: 14px;
+			color: darken($secondary_yellow_med, 5%);
+			cursor: pointer;
+			padding-top: 10px;
+			display: block;
+
+			&:hover{
+				color: $secondary_yellow_med;
+			}
+		}
+	}
+	ul.questionnaire_types{
+		display: flex;
+		justify-content: space-around;
+		flex-flow: flex-start;
+		margin-top: 40px;
+
+		li.questionnaire{
+			width: 200px;
+			height: auto;
+			background-color: #F2F2F2;
+			padding: 20px 10px;
+			border-radius: 4px;
+			margin-right: 20px;
+			box-shadow: 0px 0px 10px rgba(black, .2);
+			cursor: pointer;
+			opacity: .6;
+			transition: all 200ms;
+
+			img{
+				width: 80%;
+				margin: 0 auto;
+				display: block;
+			}
+			p{
+				width: 100%;
+				text-align: center;
+				font-family: helvetica;
+				margin-top: 10px;
+				color: #ffffff;
+			}
+			&:nth-child(1){
+				background-image: linear-gradient( 90deg, #FEB692 10%, #EA5455 100%);
+			}
+			&:nth-child(2){
+				background-image: linear-gradient( 90deg, #EA5455 10%, #623AA2 100%);
+			}
+			&:nth-child(3){
+				background-image: linear-gradient( 90deg, #623AA2 10%, #BC78EC 100%);
+				margin-right: 0px;
+			}
+			&:hover{
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/*
+    SMALL SCREEN COMPUTER VERSION
+*/
+@media screen and (min-width: 992px ){}
+
+/*
+    LARGE SCREEN COMPUTER VERSION
+*/
+@media screen and (min-width: 1200px ){}
+
+
+/*
+    SUPER LARGE SCREEN COMPUTER VERSION
+*/
+@media screen and (min-width: 1600px ){}
