@@ -3,8 +3,9 @@
 </section>
 
 <section class="chart">
-	<h1>Results of the UX Audit</h1>
-	<p class="time">Monday 12th of August, 12:40pm</p>
+	<h1 *ngIf="questionnaire[0]['title'] == 'Pédagogie & engagement utilisateur'">Results of the UX Audit Mobile</h1>
+	<h1 *ngIf="questionnaire[0]['title'] == 'User Experience'">Results of the UX Audit Web</h1>
+	<p class="time">{{date_completed | amDateFormat:'MMMM Do YYYY, H:mm:ss'}}</p>
 	<canvas baseChart [datasets]="charts_datasets" [options]="charts_options" [labels]="charts_label" [chartType]="'polarArea'"></canvas>
 </section>
 

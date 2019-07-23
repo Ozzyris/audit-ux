@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 //EXTERNAL PACKAGE
 import { ChartsModule } from 'ng2-charts';
+import { MomentModule } from 'ngx-moment';
 
 //VIEWS
 import { QuestionnaireComponent } from './views/questionnaire/questionnaire.component';
@@ -31,7 +32,8 @@ import { GaugeConvertorPipe } from './pipes/gauge_convertor/gauge-convertor.pipe
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

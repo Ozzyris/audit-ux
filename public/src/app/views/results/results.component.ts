@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 
 export class ResultsComponent implements OnInit {
 	questionnaire: any = [];
-
 	charts_datasets: any = [
 		{
 			data: [65, 59, 90, 81, 56, 55, 40],
@@ -21,6 +20,7 @@ export class ResultsComponent implements OnInit {
             highlightStroke: "rgba(255, 255, 255, 1)",
 		},
 	];
+	date_completed: Date = new Date();
 	charts_label: any = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
 	charts_options: any = {
 		responsive: true,
@@ -65,15 +65,12 @@ export class ResultsComponent implements OnInit {
 	get_color( percentage ){
 		if( percentage < 20 ){
 			return '#ED4842'
-		}else if( percentage > 20 && percentage < 50 ){
-			return '#FFC74C'
-
-		}else if( percentage > 50 && percentage < 100 ){
-			return '#A6C34C'
-			
-		}else if( percentage == 100 ){
+		}else if( percentage > 20 && percentage <= 50 ){
+			return '#F2CA50'
+		}else if( percentage > 50 && percentage < 90 ){
+			return '#BFD833'
+		}else if( percentage >= 90 ){
 			return '#91C9E8'
 		}
 	}
-
 }

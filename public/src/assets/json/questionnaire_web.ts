@@ -1,29 +1,45 @@
 export const QUESTIONNAIRE_WEB = {
 	'section-1': {
-		'title': 'User Experience',
-		'subtitle': 'The overall experience of a person using a product such as a website or computer application, especially in terms of how easy or pleasing it is to use.',
+		'title': 'Experience Utilisateur',
+		'subtitle': 'La globalité de l’expérience d’une personne utilisant un produit tel qu’un site internet ou une application, en particulier sur sa facilité ou son appréciabilité a utiliser.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-1/question-1',
-				'title': 'Is the website personalize to the user settings?',
-				'subtitle': 'currency, language, country, taxes, delivery',
+				'title': 'Le site peut être personnalisé aux besoins de l’utilisateur.',
+				'subtitle': 'monnaie, langue, pays, taxes, livraison',
 				'possibleanswers': [
 					{
 						'order': 1,
-						'title': 'yes',
+						'title': 'conforme',
 						'requestrecomendations': false,
 						'nextquestion': 'section-1/question-2',
 						'expectedanswer': true,
-						'points': 1,
+						'points': 2,
 					},
 					{
 						'order': 2,
-						'title': 'no',
+						'title': 'partiel',
+						'requestrecomendations': true,
+						'nextquestion': 'section-1/question-2',
+						'expectedanswer': false,
+						'points': 1,
+					},
+					{
+						'order': 3,
+						'title': 'non conforme',
 						'requestrecomendations': true,
 						'nextquestion': 'section-1/question-2',
 						'expectedanswer': false,
 						'points': 0,
+					},
+					{
+						'order': 3,
+						'title': 'Hors context',
+						'requestrecomendations': false,
+						'nextquestion': 'section-1/question-3',
+						'expectedanswer': false,
+						'points': 1,
 					}
 				],
 				'answers': {},
@@ -34,8 +50,8 @@ export const QUESTIONNAIRE_WEB = {
 			}, 
 			'question-2': {
 				'id': 'section-1/question-2',
-				'title': 'Is registering provides value to users?',
-				'subtitle': 'A button called ‘Free trial’ communicates a clear benefit, but ‘Register’ doesn’t.',
+				'title': 'S’enregistrer apporte de la valeur à l’utilisateur.',
+				'subtitle': 'Un bouton labellé ”Essaie Gratuit” communique un bénéfice clair, mais un bouton ”Signup” ne le fait pas.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -62,8 +78,8 @@ export const QUESTIONNAIRE_WEB = {
 			}, 
 			'question-3': {
 				'id': 'section-1/question-3',
-				'title': 'Are the pricings transparent?',
-				'subtitle': 'Prices are clearly displayed, you can have an easy overview of the different features in different tarifs, there are no hidden costs.',
+				'title': 'Les prix sont transparents.',
+				'subtitle': 'Les prix sont affichés de manière claire. L’utilisateur a une vue complète de chaque fonctionnalité et de leurs prix. Il n’y a pas de coût caché.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -90,8 +106,8 @@ export const QUESTIONNAIRE_WEB = {
 			}, 
 			'question-4': {
 				'id': 'section-1/question-4',
-				'title': 'Is there sample content?',
-				'subtitle': 'There is a sample of the newsletter next to the newsletter sign up form.',
+				'title': 'Des exemples de contenu sont visibles avant de s’enregistrer.',
+				'subtitle': 'Il y a un exemple de newsletter à côté du bouton de souscription.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -118,8 +134,8 @@ export const QUESTIONNAIRE_WEB = {
 			}, 
 			'question-5': {
 				'id': 'section-1/question-5',
-				'title': 'Is the website credible?',
-				'subtitle': 'Credible references, credentions, contact details, images of real people are displayed.',
+				'title': 'Le site est crédible.',
+				'subtitle': 'Le site affiche des références crédibles, des crédits, des informations de contact, les images de réelles personnes sont affiché.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -146,8 +162,8 @@ export const QUESTIONNAIRE_WEB = {
 			}, 
 			'question-6': {
 				'id': 'section-1/question-6',
-				'title': 'Uncluttered product and service information?',
-				'subtitle': 'Information is scannable, images can be enlarged or zoomed in on for more detailed viewing.',
+				'title': 'Les informations du produit et des services sont bien organisé et aéré.',
+				'subtitle': 'Les informations peuvent être comprises dès un premier scan de la page. Les images peuvent être agrandies pour plus de détails.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -176,13 +192,13 @@ export const QUESTIONNAIRE_WEB = {
 	},
 	'section-2': {
 		'title': 'Homepage',
-		'subtitle': 'The page typically encountered first on a website that usually contains links to the other pages of the site.',
+		'subtitle': 'C’est la page typicalement rencontrée en premier lorsqu’un utilisateur entre sur le site internet. Elle lie en général aux autres pages du site.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-2/question-1',
-				'title': 'Are all the actions clear call?',
-				'subtitle': 'users know what to do next and why it benefits them. They understand the value proposition of the site',
+				'title': 'Toutes les actions sont claires.',
+				'subtitle': 'L’utilisateur est au courant des étapes suivantes et de quelle manière ces étapes lui bénéficie. La proposition de valeur du site est claire pour l’utilisateur.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -209,8 +225,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-2': {
 				'id': 'section-2/question-2',
-				'title': 'Is it a positive first impression?',
-				'subtitle': 'The homepage creates a positive first impression and supports conversion',
+				'title': 'La première impression du site internet est positive.',
+				'subtitle': 'La page de landing créer une bonne première impression et supporte la conversion du site.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -237,8 +253,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-3': {
 				'id': 'section-2/question-3',
-				'title': 'Are the user’s name displayed for logged in users?',
-				'subtitle': 'Hello Jack, Welcome mr. Smith',
+				'title': 'Le nom de l’utilisateur est visible une fois celui-ci connecté.',
+				'subtitle': 'Bonjour Jack, Bienvenue Mr. Smith',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -265,8 +281,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-4': {
 				'id': 'section-2/question-4',
-				'title': 'Are the major changes annonced?',
-				'subtitle': 'For example changes in the delivery policy or website downtimes / maintenance on banking apps',
+				'title': 'Les changements majeurs sont annoncés.',
+				'subtitle': 'Par exemple les changements de police de livraison ou les downtimes / maintenances du site .',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -293,8 +309,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-5': {
 				'id': 'section-2/question-5',
-				'title': 'Is the company location and contact information available?',
-				'subtitle': 'It need to be easily accessible from the Homepage',
+				'title': 'L’adresse et les informations de contact de l’entreprise sont visibles.',
+				'subtitle': 'Ils doivent être facilement accessibles dès la page d’accueil.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -321,8 +337,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-6': {
 				'id': 'section-2/question-6',
-				'title': 'Is their a privacy policy?',
-				'subtitle': 'In case the site gathers information of users.',
+				'title': 'Il y a une politique de confidentialité,',
+				'subtitle': 'dans le cas ou le site récupère des informations sur les utilisateurs.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -349,8 +365,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-7': {
 				'id': 'section-2/question-7',
-				'title': 'Are the images are relevant and meaningful?',
-				'subtitle': 'No unrelated stock photo’s or models, there are high quality pictures of the product or service.',
+				'title': 'Les images sont en contexte et répondent à un besoin.',
+				'subtitle': 'Il n’y a pas de photos de stock ou de modèle. Les photos utilisées sont des photos du produit de haute qualité.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -377,8 +393,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-8': {
 				'id': 'section-2/question-8',
-				'title': 'Is the site url works with or without www?',
-				'subtitle': 'To avoid user to get lost with url change.',
+				'title': 'Le site internet marche sans le ”www”.',
+				'subtitle': 'Pour éviter les pertes lors d’un changement d’url.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -406,14 +422,14 @@ export const QUESTIONNAIRE_WEB = {
 		}
 	},
 	'section-3': {
-		'title': 'Accessibility',
-		'subtitle': 'Accessibility defines users ability to use products/services, but not the extent to which they can attain goals (usability). While accessibility is different from usability, it has a clear impact on the user experience and should always be considered as part of a great user experience.',
+		'title': 'Accessibilité',
+		'subtitle': 'L’accessibilité d’un système d’informations vise à ce que celui-ci puisse être utilisé par tous les types d’utilisateurs.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-3/question-1',
-				'title': 'Does all non-text elements have alt attribtues?',
-				'subtitle': 'Such as images, maps, sounds and video',
+				'title': 'Tous les éléments autres que du texte ont des attributs alt,',
+				'subtitle': 'tels que les images, les cartes, les sons ou les vidéos.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -440,8 +456,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-2': {
 				'id': 'section-3/question-2',
-				'title': 'Is color alone is used to convey information?',
-				'subtitle': 'Color-blind people might get confuse.',
+				'title': 'La couleur seule n’est pas utilisée pour transmettre des informations,',
+				'subtitle': 'pour éviter que les personnes daltoniennes soient bloquées.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -468,8 +484,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-3': {
 				'id': 'section-3/question-3',
-				'title': 'is the content is readable without a stylesheet?',
-				'subtitle': 'Blind people use voice recognition who read pure html.',
+				'title': 'Le contenu reste lisible même sans feuilles de style.',
+				'subtitle': 'Les logiciels de reconnaissance de texte (pour personne aveugle) lisent le html pur.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -496,8 +512,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-4': {
 				'id': 'section-3/question-4',
-				'title': 'Does the website use flash?',
-				'subtitle': 'Flash is a blackbox to text recognition, and confuse everyone.',
+				'title': 'Le site n’utilise pas de flash.',
+				'subtitle': 'Flash est une boîte noire pour les logiciels de reconnaissance de texte.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -524,8 +540,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-5': {
 				'id': 'section-3/question-5',
-				'title': 'Are links buttons and checkboxes are easily clickable?',
-				'subtitle': 'A user can select a checkbox by clicking the text, not just the checkbox. The element also have sufficient margin on mobile.',
+				'title': 'Les liens, boutons et checkboxes sont facilement cliquables.',
+				'subtitle': 'L’utilisateur peut sélectionner une checkbox en cliquant sur le texte, pas simplement sur la checkbox elle-même, les éléments sont aussi suffisemment espacés.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -552,8 +568,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-6': {
 				'id': 'section-3/question-6',
-				'title': 'Is there a site description in the window title?',
-				'subtitle': 'Which is easily understandable as a bookmark',
+				'title': 'Le titre de la fenêtre est descriptif.',
+				'subtitle': 'Elle reste facilement compréhensible même après l’avoir mis en favoris.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -582,13 +598,13 @@ export const QUESTIONNAIRE_WEB = {
 	},
 	'section-4': {
 		'title': 'Navigation',
-		'subtitle': 'A user should never feel the need to remember his way around your Web App. It should be out front and pretty obvious',
+		'subtitle': 'Un utilisateur ne devrait jamais avoir besoin de se souvenir du chemin emprunté pour arriver à une page. Ce chemin doit être logique.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-4/question-1',
-				'title': 'Are important links placed in moving features?',
-				'subtitle': 'For example auto-rotating carousels',
+				'title': 'Les liens importants ne sont pas placés sur des blocs animés,',
+				'subtitle': 'tels que des carrousels à rotation automatiques.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -615,8 +631,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-2': {
 				'id': 'section-4/question-2',
-				'title': 'Is alphabetical A-Z sorting is avoided?',
-				'subtitle': 'It is used only when there are no better alternatives such as grouping items into related groups',
+				'title': 'L’organisation de A-Z est évité autant que possible,',
+				'subtitle': 'cette organisation est utilisée uniquement s’il n’y a pas de meilleure alternative telle que réunir les éléments par groupe de similarité.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -643,8 +659,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-3': {
 				'id': 'section-4/question-3',
-				'title': 'Does the user know where he is on the site at all time?',
-				'subtitle': 'By using breadcrumb, or common navigation pattern',
+				'title': 'L’utilisateur est conscient de sa position sur le site à tout moment,',
+				'subtitle': 'grâce à l’utilisation de breadcrumb ou d’une navigation claire.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -671,8 +687,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-4': {
 				'id': 'section-4/question-4',
-				'title': 'Is the navigation is consistent on every page?',
-				'subtitle': 'Inconsistent navigation often confuse people, and reduce retention rate',
+				'title': 'La navigation est consistent sur chaque page.',
+				'subtitle': 'Les inconsistences de navigation perdent les utilisateurs, et réduisent leur taux de rétention.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -699,8 +715,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-5': {
 				'id': 'section-4/question-5',
-				'title': 'Is the browser’s ‘back’ button is disabled?',
-				'subtitle': 'Often when lost peoples will use this button as a lifeline',
+				'title': 'Le bouton retour du navigateur est toujours fonctionnel.',
+				'subtitle': 'Souvent quand un utilisateur est perdu, il se sert de ce bouton comme d’une bouée de secours.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -727,8 +743,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-6': {
 				'id': 'section-4/question-6',
-				'title': 'Are the links descriptive?',
-				'subtitle': 'hover effects are used on navigation links, and the titles clearly explains where the call to action leads to. No ‘click here’ links',
+				'title': 'Les liens sont descriptifs.',
+				'subtitle': 'Les effets de survols sont utilisés pour les liens de navigation et leur texte expliquent de manière claire ce qu’ils font. il n’y a pas de liens ”cliquez ici”',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -755,8 +771,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-7': {
 				'id': 'section-4/question-7',
-				'title': 'Is the site’s url is memorable?',
-				'subtitle': 'This will help user in their search later on.',
+				'title': 'L’url du site peut être retenue sans efforts.',
+				'subtitle': 'Cela facilite le retour des utilisateurs sur le site.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -784,14 +800,14 @@ export const QUESTIONNAIRE_WEB = {
 		}
 	},
 	'section-5': {
-		'title': 'Search',
-		'subtitle': 'User will come to a website often with a spécific goal in mind, a good search tool will help them in their journey.',
+		'title': 'Recherche',
+		'subtitle': 'lorsqu’un utilisateur vient sur un site internet, souvent c’est parce qu’il a un objectif précis en tête, un bon outil de recherche va l’aider dans son voyage.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-5/question-1',
-				'title': 'Is there is a search bar?',
-				'subtitle': 'in case of a large website, or large amount of informations.',
+				'title': 'Le site propose une barre de recherche,',
+				'subtitle': 'dans le cas d’un large site ou d’une grande quantité d’informations.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -826,8 +842,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-2': {
 				'id': 'section-5/question-2',
-				'title': 'Is the search is available on every page?',
-				'subtitle': 'not just the homepage',
+				'title': 'La barre de recherche est disponible sur chaque page,',
+				'subtitle': 'et pas simplement sur la page d’accueil.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -854,8 +870,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-3': {
 				'id': 'section-5/question-3',
-				'title': 'Is the search box is wide enough?',
-				'subtitle': 'so that users can see what they’ve typed',
+				'title': 'La barre de recherche est suffisamment large,',
+				'subtitle': 'de manière à ce que les utilisateurs puissent voir ce qu’ils écrivent.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -882,8 +898,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-4': {
 				'id': 'section-5/question-4',
-				'title': 'Is the search a form?',
-				'subtitle': 'where users can type search words immediately, not a link',
+				'title': 'La barre de recherche est un champ de texte,',
+				'subtitle': 'de manière à ce que les utilisateurs puissent commencer leur recherche immédiatement, et non un lien vers une page de recherche.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -911,14 +927,14 @@ export const QUESTIONNAIRE_WEB = {
 		}
 	},
 	'section-6': {
-		'title': 'Links',
-		'subtitle': 'Links and button often get confused, yet a clear structure will help the global navigation of your website.',
+		'title': 'Liens',
+		'subtitle': 'Les liens et les boutons sont souvent mélangés, pourtant il existe une structure claire pour aider à la navigation d’un site internet.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-6/question-1',
-				'title': 'Are the important call to actions displayed as buttons?',
-				'subtitle': 'not link',
+				'title': 'Les Ctas sont disponibles sous forme de bouton,',
+				'subtitle': 'et non de liens.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -945,8 +961,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-2': {
 				'id': 'section-6/question-2',
-				'title': 'Are links open a new browser tab or window?',
-				'subtitle': 'unless it is a .pdf file',
+				'title': 'Les liens n’ouvrent pas de nouvelle fenêtre ou de tab,',
+				'subtitle': 'à l’exception des fichiers .pdf.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -973,8 +989,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-3': {
 				'id': 'section-6/question-3',
-				'title': 'Are links easily recognizable?',
-				'subtitle': 'They look clickable. Text that is not clickable should not be underlined',
+				'title': 'Les liens sont facilement reconnaissables.',
+				'subtitle': 'Ils donnent l’impression d’être cliquables. Les textes qui ne sont pas cliquables ne doivent pas être soulignés.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1001,8 +1017,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-4': {
 				'id': 'section-6/question-4',
-				'title': 'Is visited links color different than unvisited?',
-				'subtitle': 'To help the user know which path he took.',
+				'title': 'Les liens visités sont d’une couleur different que ceux qui ne le sont pas,',
+				'subtitle': 'pour aider l’utilisateur à savoir quel chemin il a suivi.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1029,8 +1045,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-5': {
 				'id': 'section-6/question-5',
-				'title': 'Is there broken links?',
-				'subtitle': 'Do a check with a <a href="https://www.brokenlinkcheck.com/" target="_blank">link checker</a>',
+				'title': 'Il n’y a pas de liens cassé.',
+				'subtitle': 'Faîte un check au <a href="https://www.brokenlinkcheck.com/" target="_blank">brokenlinkcheck.com</a>',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1058,14 +1074,14 @@ export const QUESTIONNAIRE_WEB = {
 		}
 	},
 	'section-7': {
-		'title': 'Layout',
-		'subtitle': 'A good layout will help your user make sence of your website and find what they are looking for.',
+		'title': 'Structure',
+		'subtitle': 'Une bonne structure va faire sens à l’utilisateur et l’aider à trouver ce qu’il cherche.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-7/question-1',
-				'title': 'Are the important content displayed first?',
-				'subtitle': 'to be determined',
+				'title': 'Le contenu important est visible en premier.',
+				'subtitle': 'tbd',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1092,8 +1108,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-2': {
 				'id': 'section-7/question-2',
-				'title': 'Is the site responsive?',
-				'subtitle': 'to be determined',
+				'title': 'Le site est responsive.',
+				'subtitle': 'tbd',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1120,8 +1136,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-3': {
 				'id': 'section-7/question-3',
-				'title': 'Are related informations grouped together clearly?',
-				'subtitle': 'to be determined',
+				'title': 'Les informations importantes sont groupés ensemble de manière claire.',
+				'subtitle': 'tbd',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1148,8 +1164,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-4': {
 				'id': 'section-7/question-4',
-				'title': 'Is there an excess of pop-up windows?',
-				'subtitle': 'to be determined',
+				'title': 'Il n’y a pas d’abus de fenêtre popup.',
+				'subtitle': 'tbd',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1176,8 +1192,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-5': {
 				'id': 'section-7/question-5',
-				'title': 'Is the website consistent?',
-				'subtitle': 'Page layouts are consistent across the whole website',
+				'title': 'Le site internet est consistent.',
+				'subtitle': 'Les templates de pages sont consistants sur l’ensemble du site.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1204,8 +1220,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-6': {
 				'id': 'section-7/question-6',
-				'title': 'Is the pages cluttered?',
-				'subtitle': 'there is enough white space to support scanning',
+				'title': 'Les page sont suffisement aéré.',
+				'subtitle': 'Il y a suffisamment d’espace vide pour supporter le scanning des pages.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1234,13 +1250,13 @@ export const QUESTIONNAIRE_WEB = {
 	},
 	'section-8': {
 		'title': 'Process',
-		'subtitle': 'Not everything is visuel, the behind the scene is as important as your final product.',
+		'subtitle': 'Tout n’est pas uniquement visuel, ce qui se passe derrière les rideaux est tout aussi important que le produit final.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-8/question-1',
-				'title': 'Does the client use issue tracking?',
-				'subtitle': 'usability and user experience issues are tracked in an issue tracker',
+				'title': 'Le site utilise des services de tracking pour comprendre ses utilisateurs.',
+				'subtitle': 'Les problèmes d’utilisabilité et d’expérience utilisateur sont suivi dans un tracker d’issues.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1267,8 +1283,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-2': {
 				'id': 'section-8/question-2',
-				'title': 'Does the client have user testing session with target users?',
-				'subtitle': 'and done at different stages of the project',
+				'title': 'Le client a des sessions de tests utilisateur avec ses utilisateurs cible,',
+				'subtitle': 'et ces sessions sont faites à toutes les étapes du projet.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1295,8 +1311,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-3': {
 				'id': 'section-8/question-3',
-				'title': 'Does the client prioritizing his task?',
-				'subtitle': 'changes are prioritized based on their importance',
+				'title': 'Le client prioritise ses taches,',
+				'subtitle': 'et les changements de prioritization sont basé sur leur importance.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1323,8 +1339,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-4': {
 				'id': 'section-8/question-4',
-				'title': 'Does the client analysized the impact of changes?',
-				'subtitle': 'changes might be expensive and time consuming. Therefore it’s important to analyze the impact',
+				'title': 'Le client analyse l’impact de chacune de ses taches.',
+				'subtitle': 'Les changements peuvent être couteux en temps et en argent. De ce fait il est important d’analyser leur impact.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1351,8 +1367,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-5': {
 				'id': 'section-8/question-5',
-				'title': 'Does the client changes have a ROI plan?',
-				'subtitle': 'changes might be expensive and time consuming. Therefore it’s important to analyze the impact',
+				'title': 'Les changements sur la platform ont des plans des ROI.',
+				'subtitle': 'tbd',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1380,14 +1396,14 @@ export const QUESTIONNAIRE_WEB = {
 		}
 	},
 	'section-9': {
-		'title': 'Forms',
-		'subtitle': 'Form can me the most pain taking part of a website, well structuring them is key to success.',
+		'title': 'Formulaires',
+		'subtitle': 'Un formulaire peut vite devenir la partie la plus douloureuse d’un site internet, mais bien structuré il est aussi une des clefs du succès.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-9/question-1',
-				'title': 'Are the forms simple?',
-				'subtitle': 'only the absolutely necessary questions are asked in forms',
+				'title': 'Les formulaires sont simples.',
+				'subtitle': 'Seules les questions nécessaires sont pausées.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1414,8 +1430,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-2': {
 				'id': 'section-9/question-2',
-				'title': 'Does the form avoid long dropdown menus?',
-				'subtitle': 'instead users can input text',
+				'title': 'Les formulaires évitent l’utilisation de dropdown trop long,',
+				'subtitle': 'à la place les utilisateurs peuvent utiliser des champs de saisis auto-complété.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1442,8 +1458,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-3': {
 				'id': 'section-9/question-3',
-				'title': 'Are inputting data flexible?',
-				'subtitle': 'for example with phone numbers or birth dates',
+				'title': 'Les champs de saisis peuvent être agrandis.',
+				'subtitle': 'Par exemple pour les dates et les textareas.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1470,8 +1486,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-4': {
 				'id': 'section-9/question-4',
-				'title': 'Are fields labeled with common terms?',
-				'subtitle': 'name, address',
+				'title': 'Tous les champs de saisis utilisent des labels basés sur des termes communs.',
+				'subtitle': 'nom, prénom, adresse',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1498,8 +1514,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-5': {
 				'id': 'section-9/question-5',
-				'title': 'Is autofill enabled?',
-				'subtitle': 'to be determinded',
+				'title': 'L’auto-completion est actif.',
+				'subtitle': 'tbd',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1526,8 +1542,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-6': {
 				'id': 'section-9/question-6',
-				'title': 'Does fields contain sample answers?',
-				'subtitle': 'which help users to input information',
+				'title': 'Les champs de saisis ont des exemples clairs dans leur placeholder.',
+				'subtitle': 'Ils aident l’utilisateur à remplir ce champ.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1554,8 +1570,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-7': {
 				'id': 'section-9/question-7',
-				'title': 'Are tooltips provided, when needed?',
-				'subtitle': 'To be determined',
+				'title': 'Les tooltypes sont utilisés quand cela est nécessaire.',
+				'subtitle': 'tbd',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1582,8 +1598,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-8': {
 				'id': 'section-9/question-8',
-				'title': 'Does the form have a confirmation page?',
-				'subtitle': 'To be determined',
+				'title': 'Les formulaires ont une page de confirmation.',
+				'subtitle': 'tbd',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1610,8 +1626,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-9': {
 				'id': 'section-9/question-9',
-				'title': 'Are the error messages shown next to the input field?',
-				'subtitle': 'Not just on the top or button of the page',
+				'title': 'Les messages d’erreur sont contextualisés,',
+				'subtitle': 'et pas simplement un toast message en haut de la page.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1639,14 +1655,14 @@ export const QUESTIONNAIRE_WEB = {
 		}
 	},
 	'section-10': {
-		'title': 'Content',
-		'subtitle': 'People come to a website for its content not its design, make it count.',
+		'title': 'Contenu',
+		'subtitle': 'Les utilisateurs visitent un site internet pour son contenu, pas son design.',
 		'percentage_rate': 0,
 		'questions': {
 			'question-1': {
 				'id': 'section-10/question-1',
-				'title': 'Is there sufficient contrast?',
-				'subtitle': 'There is adequate contrast between the text and background',
+				'title': 'Le site internet est suffisamment contrasté.',
+				'subtitle': 'Il y a suffisamment de contraste entre le texte et le fond de page.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1673,8 +1689,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-2': {
 				'id': 'section-10/question-2',
-				'title': 'Is the content scannable?',
-				'subtitle': 'by using short paragraphs, descriptive headings, lists, fat keywords',
+				'title': 'Le contenu de chaque page est facilement scannable,',
+				'subtitle': 'en utilisant des paragraphes court, des introductions descriptives, des listes et de mots clefs.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1701,8 +1717,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-3': {
 				'id': 'section-10/question-3',
-				'title': 'Is the content written with common language?',
-				'subtitle': 'that users easily understand',
+				'title': 'Les textes sont écrits en langage commun.',
+				'subtitle': 'Les mots sont facilement compréhensibles par les utilisateurs.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1729,8 +1745,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-4': {
 				'id': 'section-10/question-4',
-				'title': 'Is the content useful and up-to-date?',
-				'subtitle': 'providing answers to the most common questions asked by users. there are no long instructions or ‘welcome to our website’ text',
+				'title': 'Les textes sont utiles et à jour.',
+				'subtitle': 'Ils offrent des réponses aux questions les plus communes. Il n’y a pas de longue introduction ou de ”bienvenus sur notre site internet” type de message.',
 				'possibleanswers': [
 					{
 						'order': 1,
@@ -1757,8 +1773,8 @@ export const QUESTIONNAIRE_WEB = {
 			},
 			'question-5': {
 				'id': 'section-10/question-5',
-				'title': 'Does the website use of uppercase letters in prose?',
-				'subtitle': 'to be determine',
+				'title': 'Le site n’abuse pas des majuscules.',
+				'subtitle': 'tbd',
 				'possibleanswers': [
 					{
 						'order': 1,
