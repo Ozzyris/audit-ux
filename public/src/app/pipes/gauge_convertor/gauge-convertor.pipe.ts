@@ -11,7 +11,6 @@ export class GaugeConvertorPipe implements PipeTransform {
       		final_value = ((difference * (100 - value)) / 100);
       		final_value = max_value - final_value;
 
-		console.log(final_value);
 		return final_value;
 	}
 }

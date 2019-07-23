@@ -20,6 +20,7 @@ section.breadcrumb{
 			font-size: 11px;
 			color: $primary_blue_dark;
 			transition: all 200ms;
+			height: 14px;
 
 			&:hover{
 				color: darken($secondary_yellow_med, 5%);

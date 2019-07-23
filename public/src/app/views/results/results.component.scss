@@ -51,6 +51,7 @@ section.questionnaire{
 	overflow: auto;
 	margin-top: 50px;
 	padding-bottom: 50px;
+	box-decoration-break: clone;
 
 	div.graph{
 		width: 150px;
@@ -110,7 +111,7 @@ section.questionnaire{
 	div.content{
 		width: calc(100% - 170px);
 		padding-left: 20px;
-		height: 100px;
+		height: auto;
 		float: left;
 		margin-top: 30px;
 
@@ -136,12 +137,33 @@ section.questionnaire{
 				li{
 					list-style-type: disc;
 					margin: 10px 0 0 20px;
-					font-family: helvetica;
-					font-weight: 400;
-					font-size: 16px;
-					color: $primary_blue_dark;
+					line-height: 20px;
+					color: darken($primary_blue_dark, 10%);
+					
+
+					p.label{
+						font-weight: 800;
+						font-size: 12px;
+						font-family: helvetica;
+						color: darken($primary_blue_dark, 10%);
+					}
+					p.response{
+						font-weight: 400;
+						font-size: 18px;
+						font-family: helvetica;
+						color: lighten($primary_blue_dark, 10%);
+					}
 				}
 			}
+		}
+	}
+}
+
+
+@media print {
+	section.questionnaire{
+		div.content{
+			display:table-row-group;
 		}
 	}
 }

@@ -1,4 +1,4 @@
-export const QUESTIONS = {
+export const QUESTIONNAIRE_WEB = {
 	'section-1': {
 		'title': 'User Experience',
 		'subtitle': 'The overall experience of a person using a product such as a website or computer application, especially in terms of how easy or pleasing it is to use.',

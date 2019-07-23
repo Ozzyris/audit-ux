@@ -27,10 +27,12 @@ export class ResultsComponent implements OnInit {
 		legend: {
 			position: 'right',
 		},
-		scales: {
+		scale: {
             ticks: {
-                suggestedMin: 100,
-                suggestedMax: 120
+				beginAtZero: true,
+				min: 0,
+				max: 100,
+				stepSize: 20
             }
         }
 	};
@@ -39,6 +41,7 @@ export class ResultsComponent implements OnInit {
 	ngOnInit(){
 		this.get_questionnaire_from_storage()
 			.then( questionnaire => {
+				console.log( questionnaire )
 				this.questionnaire = JSON.parse( questionnaire );
 				this.build_chart( JSON.parse( questionnaire ) );
 			});
@@ -57,7 +60,6 @@ export class ResultsComponent implements OnInit {
 			this.charts_label.push( questionnaire[i].title );
 			this.charts_datasets[0].data.push( questionnaire[i].percentage_rate );
 		}
-		console.log(this.charts_label, this.charts_datasets[0].highlightFill);
 	}
 
 	get_color( percentage ){

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { QUESTIONS } from '../../../assets/json/questionnaire';
+import { QUESTIONNAIRE_WEB } from '../../../assets/json/questionnaire_web';
+import { QUESTIONNAIRE_MOBILE } from '../../../assets/json/questionnaire_mobile';
 import { Router, ActivatedRoute } from '@angular/router';
+import { HostListener } from '@angular/core';
 
 @Component({
 	selector: 'app-questionnaire',
@@ -9,24 +11,45 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 
 export class QuestionnaireComponent implements OnInit {
-	all_question: any = QUESTIONS;
+	all_question: any ;
 	current_section: number = 0;
 	history: any = [];
-	breadcrumbs: any = ['User Experience', 'Homepage', 'Accessibility', 'Navigation', 'Search', 'Links', 'Layout', 'Process', 'Forms', 'Content'];
+	breadcrumbs: any = [];
 	display_previous_audit: boolean = false;
 
 	constructor( private router: Router, private route: ActivatedRoute ){}
 	ngOnInit(){
 		this.get_questionnaire_type();
-		// this.check_previous_audit();
+		this.check_previous_audit();
 	}
 
+	@HostListener('document:keypress', ['$event'])
+		handleKeyboardEvent(event: KeyboardEvent) { 
+			if(event.key == 'Enter'){
+				this.goto_next();
+			}
+		}
+
 	//QUESTIONNAIRE TYPE
-	get_questionnaire_type(){
+	get_questionnaire_type(): void{
 		this.route.params.subscribe( params => {
-      		console.log( params.type );
+			
+			console.log(params.type);
+			if( params.type == 'mobile' ){
+				this.all_question = QUESTIONNAIRE_MOBILE;
+			}else if( params.type == 'web' ){
+				this.all_question = QUESTIONNAIRE_WEB;
+			}else if( params.type == 'other' ){}
+
+			var array_all_question: any = Object.values(this.all_question)
+			for (var i = array_all_question.length - 1; i >= 0; i--) {
+				this.breadcrumbs.push(array_all_question[i].title);
+			}
+
+			this.launch_audit();
 		})
 	}
+
 	//RESURECTION
 	check_previous_audit(){
 		this.get_questionnaire_from_storage()
@@ -34,22 +57,29 @@ export class QuestionnaireComponent implements OnInit {
 				if(questionnaire != null){
 					this.display_previous_audit = true;
 				}else{
-					this.build_next_section( 'section-1' );
-					this.build_next_question( 'section-1', 'question-1' );
+					this.launch_audit();
 				}
 			});
 	}
 	delete_previous_audit(){
 		localStorage.removeItem("audit-ux");
 		this.display_previous_audit = false;
-		this.build_next_section( 'section-1' );
-		this.build_next_question( 'section-1', 'question-1' );
+		this.launch_audit();
+	}
+
+	launch_audit(){
+		if(this.history.length == 0 ){
+			console.log( this.history );
+			this.build_next_section( 'section-1' );
+			this.build_next_question( 'section-1', 'question-1' );
+		}
 	}
 	ressurect_previous_audit(){
 		this.get_questionnaire_from_storage()
 			.then( questionnaire => {
 				this.display_previous_audit = false;
 				let questionnaire_json = JSON.parse( questionnaire );
+				console.log(questionnaire_json);
 				this.history = questionnaire_json;
 				this.current_section = (questionnaire_json.length - 1);
 				let next_block = this.history[this.current_section].questions[(this.history[this.current_section].questions.length - 1)].answers.nextquestion,
@@ -73,22 +103,28 @@ export class QuestionnaireComponent implements OnInit {
 		}else{
 			let block = next_block.split("/"),
 				next_section = block[0],
-				next_question =  block[1],
+				next_question = block[1],
 				current_section_name = 'section-'+(this.current_section +1);
 
+			console.log(block, next_section, next_question, current_section_name);
 			
-				if( current_section_name != next_section){
-					if( nb_of_section == (this.current_section+1)){
-						this.build_next_section( next_section );
-						this.current_section ++;
-						this.build_next_question( next_section, next_question );
-					}else{
-						this.current_section ++;
-					}
-				}else{
+			if( current_section_name != next_section){
+				if( nb_of_section == (this.current_section+1)){
+					console.log('right');
+					this.build_next_section( next_section );
+					this.current_section ++;
 					this.build_next_question( next_section, next_question );
+				}else{
+					console.log('wrong 1');
+					this.current_section ++;
 				}
+			}else{
+				console.log('wrong 2');
+				this.build_next_question( next_section, next_question );
 			}
+		}
+
+		console.log(this.all_question)
 	}
 	goto_previous(){
 		this.current_section --;
@@ -106,12 +142,12 @@ export class QuestionnaireComponent implements OnInit {
 		}
 	}
 	build_next_question( next_section, next_question ){
-		this.history[this.current_section].questions.push( QUESTIONS[next_section].questions[next_question] );
+		this.history[this.current_section].questions.push( this.all_question[next_section].questions[next_question] );
 	}
 	build_next_section( next_section ){
 		this.history.push({
-			'title': QUESTIONS[next_section].title,
-			'subtitle': QUESTIONS[next_section].subtitle,
+			'title': this.all_question[next_section].title,
+			'subtitle': this.all_question[next_section].subtitle,
 			'questions': []
 		});
 	}
